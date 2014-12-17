@@ -5,6 +5,59 @@
 table.table a.label {
   text-decoration: none; }
 
+.top-buffer {
+  margin-top: 10px; }
+
+div.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none; }
+
+.truncate {
+  position: relative; }
+
+.truncate .content {
+  position: absolute;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.truncate .spacer {
+  height: 0;
+  overflow: hidden; }
+
+a.inactive {
+  color: #999999;
+  text-decoration: none; }
+
+table.instance-switch {
+  margin-bottom: 0px; }
+
+table.instance-switch tbody tr td {
+  padding: 0px; }
+
+table.table {
+  margin-bottom: 0px; }
+
+div.panel-heading {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+div.panel-body {
+  padding: 10px; }
+
+div pre {
+  overflow-x: auto;
+  word-break: normal;
+  word-wrap: normal; }
+
+label.control-label {
+  font-weight: bold; }
+
+/*h5 a:hover {*/
+/*text-decoration: none;*/
+/*}*/
 /**
  * Reset some basic elements
  */
@@ -46,7 +99,7 @@ ul, ol, dl, figure,
  */
 img {
   max-width: 100%;
-  vertical-align: middle; }
+  /*vertical-align: middle;*/ }
 
 /**
  * Figures
@@ -171,10 +224,10 @@ blockquote {
 
 .site-title {
   font-size: 26px;
-  line-height: 56px;
+  /*line-height: 56px;*/
   letter-spacing: -1px;
-  margin-bottom: 0;
-  float: left; }
+  /*margin-bottom: 0;*/
+  /*float: left;*/ }
   .site-title, .site-title:visited {
     color: #424242; }
 

@@ -7,17 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>ROS Index</title>
-    <meta name="description" content="A community-maintained index of known ROS packages.
+    <meta name="description" content="a community-maintained index of robotics software
 ">
 
     <link rel="canonical" href="http://rosindex.github.io/p/jsk_pcl_ros/">
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
 
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="/js/jquery-cookie-1.4.1/jquery.cookie.js" type="text/javascript"></script>
 
+    <script type="text/javascript" src="/js/ga.js"></script>
 </head>
 
 
@@ -26,7 +27,38 @@
     <header class="site-header">
 
   <div class="wrapper">
+    <div class="container-fluid" style="margin-bottom: 10px">
+      <div class="row">
 
+        <!-- title -->
+        <div class="col-xs-3 col-sm-3" style="margin-top: 8px">
+          <a class="site-title" href="/">ROS Index</a>
+        </div>
+
+        <!-- main links -->
+        <div class="col-xs-9 col-sm-7 text-right" style="margin-top: 8px">
+          <a class="btn btn-link" href="/about">About</a>
+          <a class="btn btn-link" href="/packages">Packages</a>
+          <a class="btn btn-link" href="/repos">Repos</a>
+          <a class="btn btn-link" href="/contribute">Contribute</a>
+          <a class="btn btn-link" href="/stats">Stats</a>
+        </div>
+
+        <!-- searchbox -->
+        <div class="col-xs-12 col-sm-2 text-right" style="margin-top: 12px">
+          <form action="/search/" role="form">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" name="q" placeholder="Search">
+              <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--
     <a class="site-title" href="/">ROS Index</a>
 
     <nav class="site-nav">
@@ -39,12 +71,12 @@
       </a>
 
       <div class="trigger">
-        <!--<a class="page-link" href="/p/jsk_pcl_ros/index.html"></a>-->
         <a class="page-link" href="/packages">Packages</a>
         <a class="page-link" href="/repos">Repositories</a>
         <a class="page-link" href="/search">Search</a>
       </div>
     </nav>
+    -->
 
   </div>
 
@@ -53,134 +85,1592 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="container-fluid" style="margin:20px">
-  <div class="row">
-    <ol class="breadcrumb">
-      <li><a href="/">Home</a></li>
-      <li><a href="/packages">Packages</a></li>
-      <li><a href="/packages/jsk_pcl_ros">jsk_pcl_ros</a></li>
-      <li class="active">rosdistro</li>
-    </ol>
-  </div>
-  <div class="row">
-    <div class="well well-sm">
-  <table class="table-condensed">
-    <tbody>
-      <tr>
-        <!--<td><span class="pull-right">description</span></td>-->
-        <td>
-          <h4>jsk_recognition <small></small></h4>
-          
-        </td>
-      </tr>
-      
-        <tr>
-          <td>
-<div id="repo-switch" class="btn-group btn-group-justified" role="group">
-  <div class="btn-group" role="group">
-    <div class="dropdown">
-      <! -- TODO: add disabled when only 1 version is known -->
-      <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-        <span class="pull-left">
-          <span class="glyphicon glyphicon-star"></span>
-          rosdistro ( https://github.com/jsk-ros-pkg/jsk_recognition.git )
-        </span>
-        <span class="pull-right"><span class="caret"></span></span>
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        
-          <li role="presentation">
-          <a id="rosdistro" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/rosdistro" data="rosdistro">
-              <span class="glyphicon glyphicon-star"></span>
-              rosdistro ( https://github.com/jsk-ros-pkg/jsk_recognition.git )
-            </a>
-          </li>
-        
-      </ul>
+        <div class="container-fluid" style="margin-top: 20px">
+  <div class="container-fluid">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/packages">Packages</a></li>
+        <li class="active">jsk_pcl_ros</li>
+      </ol>
     </div>
-  </div>
-</div>
-</td>
-        </tr>
+    <div class="row">
       
-      
-        <tr>
-          <td>
-            
 
 <div id="distro-switch" class="btn-group btn-group-justified" data-toggle="buttons">
   
-  <label id="indigo-option" class="distro-button btn btn-xs btn-default" href="#indigo" data="indigo">
+    <label id="indigo-option" class="distro-button btn btn-xs btn-default" href="#indigo" data="indigo">
       <input type="radio" name="options" id="indigo-radio" autocomplete="off"> indigo
     </label>
   
-  <label id="hydro-option" class="distro-button btn btn-xs btn-default" href="#hydro" data="hydro">
+    <label id="hydro-option" class="distro-button btn btn-xs btn-primary" href="#hydro" data="hydro">
       <input type="radio" name="options" id="hydro-radio" autocomplete="off"> hydro
     </label>
   
-  <label id="groovy-option" class="distro-button btn btn-xs btn-primary" href="#groovy" data="groovy">
+    <label id="groovy-option" class="distro-button btn btn-xs btn-primary" href="#groovy" data="groovy">
       <input type="radio" name="options" id="groovy-radio" autocomplete="off"> groovy
     </label>
   
 
   <!-- Older distros -->
   <div class="btn-group dropdown">
-    <label type="button" class="btn btn-xs dropdown-toggle btn-default" data-toggle="dropdown" id="older-distro-button">
-    <input type="radio" name="options" autocomplete="off">
-    <span id="older-label">Older</span>
-    <span class="caret"></span>
-  </label>
-  <ul class="dropdown-menu" role="menu">
-    
-      <li data="fuerte" id="fuerte-option" class="disabled older-distro-option"  href="#fuerte">
-      <a href="#fuerte" data="fuerte" id="fuerte-button">fuerte</a>
-      </li>
-    
-      <li data="electric" id="electric-option" class="disabled older-distro-option"  href="#electric">
-      <a href="#electric" data="electric" id="electric-button">electric</a>
-      </li>
-    
-      <li data="diamondback" id="diamondback-option" class="disabled older-distro-option"  href="#diamondback">
-      <a href="#diamondback" data="diamondback" id="diamondback-button">diamondback</a>
-      </li>
-    
-      <li data="c-turtle" id="c-turtle-option" class="disabled older-distro-option"  href="#c-turtle">
-      <a href="#c-turtle" data="c-turtle" id="c-turtle-button">c-turtle</a>
-      </li>
-    
-  </ul>
-</div>
-</div>
-
-          </td>
-        </tr>
+    <label type="button" class="btn btn-xs dropdown-toggle btn-primary" data-toggle="dropdown" id="older-distro-button">
+        <input type="radio" name="options" autocomplete="off">
+      <span id="older-label">Older</span>
+      <span class="caret"></span>
+    </label>
+    <ul class="dropdown-menu" role="menu">
       
-    </tbody>
-  </table>
+        <li data="fuerte" id="fuerte-option" class=" older-distro-option"  href="#fuerte">
+          <a href="#fuerte" data="fuerte" id="fuerte-button">fuerte</a>
+        </li>
+      
+        <li data="electric" id="electric-option" class=" older-distro-option"  href="#electric">
+          <a href="#electric" data="electric" id="electric-button">electric</a>
+        </li>
+      
+        <li data="diamondback" id="diamondback-option" class="disabled older-distro-option"  href="#diamondback">
+          <a href="#diamondback" data="diamondback" id="diamondback-button">diamondback</a>
+        </li>
+      
+    </ul>
+  </div>
 </div>
 
+    </div>
+    <div class="row">
+      &nbsp;
+    </div>
+    <div class="row">
+      <div class="well well-sm">
+        
+          <div class="distro distro-indigo">
+            
+          </div>
+        
+          <div class="distro distro-hydro">
+            
+              
+              
+              
+              
+
+
+<table class="table">
+  <tr>
+    <td width="100px" class="text-center">
+      <img style="width: 80px" src="/assets/package.png">
+    </td>
+    <td>
+      <h3 style="margin-top: 5px">
+        <a style="text-decoration:none" href="/p/jsk_pcl_ros">jsk_pcl_ros</a> <small>package from <a style="text-decoration:none" href="/r/jsk_recognition/github-jsk-ros-pkg-jsk_recognition">jsk_recognition</a> repo</small>
+      </h3>
+      
+        
+          <a class="label label-primary" href="/p/checkerboard_detector/github-jsk-ros-pkg-jsk_recognition">checkerboard_detector</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/cr_calibration/github-jsk-ros-pkg-jsk_recognition">cr_calibration</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/cr_capture/github-jsk-ros-pkg-jsk_recognition">cr_capture</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/imagesift/github-jsk-ros-pkg-jsk_recognition">imagesift</a>
+        
+      
+        
+          <span class="label label-default">jsk_pcl_ros</span>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_perception/github-jsk-ros-pkg-jsk_recognition">jsk_perception</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_recognition/github-jsk-ros-pkg-jsk_recognition">jsk_recognition</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/orbit_pantilt/github-jsk-ros-pkg-jsk_recognition">orbit_pantilt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/posedetectiondb/github-jsk-ros-pkg-jsk_recognition">posedetectiondb</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/resized_image_transport/github-jsk-ros-pkg-jsk_recognition">resized_image_transport</a>
+        
+      
+    </td>
+  </tr>
+</table>
+<div class="top-buffer">
+  <div class="text-left">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <a target="_blank" href="http://docs.ros.org/hydro/api/jsk_pcl_ros/html/" type="button" class="btn btn-default "><span class="glyphicon glyphicon-file"></span> API</a>
+      <a target="_blank" href="https://github.com/jsk-ros-pkg/jsk_recognition.git" type="button" class="btn btn-default"><span class="glyphicon glyphicon-leaf"></span> SRC</a>
+      <a target="_blank" href="http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:jsk_pcl_ros/page:1/" type="button" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a>
+      <a target="_blank" href="http://wiki.ros.org/jsk_pcl_ros" type="button" class="btn btn-default"><span class="glyphicon glyphicon-info-sign"></span> Wiki</a>
+      
+    </div>
   </div>
-  <div class="row">
-    
-      <div class="distro distro-indigo">
+</div>
+<div class="top-buffer distro distro-hydro">
+  
+<table class="table table-condensed instance-switch">
+  <tr>
+    <td>
+      <div id="repo-switch" class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" style="width: 50px">
+          <a type="button" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="left" title="View Instances" 
+            href="/packages/jsk_pcl_ros"><span class="glyphicon glyphicon-th"></span></a>
+        </div>
+        <div class="btn-group" style="width: 90%" role="group">
+          <div class="dropdown">
+            <!-- TODO: add disabled when only 1 version is known? -->
+            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              <span class="pull-left" style="width: 100%; text-align: left">
+                <span class="pull-right"><span class="caret"></span></span> 
+                <span class="glyphicon glyphicon-none"></span>https://github.com/jsk-ros-pkg/jsk_recognition.git
+              </span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              
+                <li role="presentation">
+                  <a id="github-jsk-ros-pkg-jsk_recognition" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/github-jsk-ros-pkg-jsk_recognition" data="github-jsk-ros-pkg-jsk_recognition">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://github.com/jsk-ros-pkg/jsk_recognition.git
+                  </a>
+                </li>
+              
+                <li role="presentation">
+                  <a id="svn-code-net-p-jsk-ros-pkg" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/svn-code-net-p-jsk-ros-pkg" data="svn-code-net-p-jsk-ros-pkg">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://svn.code.sf.net/p/jsk-ros-pkg/code/trunk
+                  </a>
+                </li>
+              
+                <li role="presentation">
+                  <a id="jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg" data="jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+            
+          </div>
         
-        <em>No branch for distro <strong>indigo</strong>. Known supported distros are highlighted in the buttons above.</em>
+          <div class="distro distro-groovy">
+            
+              
+              
+              
+              
+
+
+<table class="table">
+  <tr>
+    <td width="100px" class="text-center">
+      <img style="width: 80px" src="/assets/package.png">
+    </td>
+    <td>
+      <h3 style="margin-top: 5px">
+        <a style="text-decoration:none" href="/p/jsk_pcl_ros">jsk_pcl_ros</a> <small>package from <a style="text-decoration:none" href="/r/jsk_recognition/github-jsk-ros-pkg-jsk_recognition">jsk_recognition</a> repo</small>
+      </h3>
+      
+        
+          <a class="label label-primary" href="/p/checkerboard_detector/github-jsk-ros-pkg-jsk_recognition">checkerboard_detector</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/cr_calibration/github-jsk-ros-pkg-jsk_recognition">cr_calibration</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/cr_capture/github-jsk-ros-pkg-jsk_recognition">cr_capture</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/imagesift/github-jsk-ros-pkg-jsk_recognition">imagesift</a>
+        
+      
+        
+          <span class="label label-default">jsk_pcl_ros</span>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_perception/github-jsk-ros-pkg-jsk_recognition">jsk_perception</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_recognition/github-jsk-ros-pkg-jsk_recognition">jsk_recognition</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/orbit_pantilt/github-jsk-ros-pkg-jsk_recognition">orbit_pantilt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/posedetectiondb/github-jsk-ros-pkg-jsk_recognition">posedetectiondb</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/resized_image_transport/github-jsk-ros-pkg-jsk_recognition">resized_image_transport</a>
+        
+      
+    </td>
+  </tr>
+</table>
+<div class="top-buffer">
+  <div class="text-left">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <a target="_blank" href="http://docs.ros.org/groovy/api/jsk_pcl_ros/html/" type="button" class="btn btn-default "><span class="glyphicon glyphicon-file"></span> API</a>
+      <a target="_blank" href="https://github.com/jsk-ros-pkg/jsk_recognition.git" type="button" class="btn btn-default"><span class="glyphicon glyphicon-leaf"></span> SRC</a>
+      <a target="_blank" href="http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:jsk_pcl_ros/page:1/" type="button" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a>
+      <a target="_blank" href="http://wiki.ros.org/jsk_pcl_ros" type="button" class="btn btn-default"><span class="glyphicon glyphicon-info-sign"></span> Wiki</a>
+      
+    </div>
+  </div>
+</div>
+<div class="top-buffer distro distro-groovy">
+  
+<table class="table table-condensed instance-switch">
+  <tr>
+    <td>
+      <div id="repo-switch" class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" style="width: 50px">
+          <a type="button" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="left" title="View Instances" 
+            href="/packages/jsk_pcl_ros"><span class="glyphicon glyphicon-th"></span></a>
+        </div>
+        <div class="btn-group" style="width: 90%" role="group">
+          <div class="dropdown">
+            <!-- TODO: add disabled when only 1 version is known? -->
+            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              <span class="pull-left" style="width: 100%; text-align: left">
+                <span class="pull-right"><span class="caret"></span></span> 
+                <span class="glyphicon glyphicon-none"></span>https://github.com/jsk-ros-pkg/jsk_recognition.git
+              </span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              
+                <li role="presentation">
+                  <a id="github-jsk-ros-pkg-jsk_recognition" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/github-jsk-ros-pkg-jsk_recognition" data="github-jsk-ros-pkg-jsk_recognition">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://github.com/jsk-ros-pkg/jsk_recognition.git
+                  </a>
+                </li>
+              
+                <li role="presentation">
+                  <a id="svn-code-net-p-jsk-ros-pkg" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/svn-code-net-p-jsk-ros-pkg" data="svn-code-net-p-jsk-ros-pkg">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://svn.code.sf.net/p/jsk-ros-pkg/code/trunk
+                  </a>
+                </li>
+              
+                <li role="presentation">
+                  <a id="jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg" data="jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+            
+          </div>
+        
+          <div class="distro distro-fuerte">
+            
+              
+              
+              
+              
+
+
+<table class="table">
+  <tr>
+    <td width="100px" class="text-center">
+      <img style="width: 80px" src="/assets/package.png">
+    </td>
+    <td>
+      <h3 style="margin-top: 5px">
+        <a style="text-decoration:none" href="/p/jsk_pcl_ros">jsk_pcl_ros</a> <small>package from <a style="text-decoration:none" href="/r/jsk-ros-pkg/svn-code-net-p-jsk-ros-pkg">jsk-ros-pkg</a> repo</small>
+      </h3>
+      
+        
+          <a class="label label-primary" href="/p/aques_talk/svn-code-net-p-jsk-ros-pkg">aques_talk</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/crlibm/svn-code-net-p-jsk-ros-pkg">crlibm</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/downward/svn-code-net-p-jsk-ros-pkg">downward</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/ff/svn-code-net-p-jsk-ros-pkg">ff</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/ffha/svn-code-net-p-jsk-ros-pkg">ffha</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jtalk/svn-code-net-p-jsk-ros-pkg">jtalk</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/julius/svn-code-net-p-jsk-ros-pkg">julius</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/libsiftfast/svn-code-net-p-jsk-ros-pkg">libsiftfast</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/nlopt/svn-code-net-p-jsk-ros-pkg">nlopt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/python_twitter/svn-code-net-p-jsk-ros-pkg">python_twitter</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/python_twoauth/svn-code-net-p-jsk-ros-pkg">python_twoauth</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/voice_text/svn-code-net-p-jsk-ros-pkg">voice_text</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/dynamic_tf_publisher/svn-code-net-p-jsk-ros-pkg">dynamic_tf_publisher</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_data/svn-code-net-p-jsk-ros-pkg">jsk_data</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_hark_msgs/svn-code-net-p-jsk-ros-pkg">jsk_hark_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_joy/svn-code-net-p-jsk-ros-pkg">jsk_joy</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_openni_kinect/svn-code-net-p-jsk-ros-pkg">jsk_openni_kinect</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/kinect_near_mode_calibration/svn-code-net-p-jsk-ros-pkg">kinect_near_mode_calibration</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openni_pointer/svn-code-net-p-jsk-ros-pkg">openni_pointer</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openni_scene/svn-code-net-p-jsk-ros-pkg">openni_scene</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openni_swipe/svn-code-net-p-jsk-ros-pkg">openni_swipe</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/collada_urdf_jsk_patch/svn-code-net-p-jsk-ros-pkg">collada_urdf_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/depth_image_proc_jsk_patch/svn-code-net-p-jsk-ros-pkg">depth_image_proc_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/ee_cart_imped_jsk_patch/svn-code-net-p-jsk-ros-pkg">ee_cart_imped_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/image_view2/svn-code-net-p-jsk-ros-pkg">image_view2</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/image_view_jsk_patch/svn-code-net-p-jsk-ros-pkg">image_view_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/laser_filters_jsk_patch/svn-code-net-p-jsk-ros-pkg">laser_filters_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/move_arm_jsk_patch/svn-code-net-p-jsk-ros-pkg">move_arm_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/multi_map_server/svn-code-net-p-jsk-ros-pkg">multi_map_server</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openni_tracker_jsk_patch/svn-code-net-p-jsk-ros-pkg">openni_tracker_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2_groovy_patches/svn-code-net-p-jsk-ros-pkg">pr2_groovy_patches</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2_teleop_general_jsk_patch/svn-code-net-p-jsk-ros-pkg">pr2_teleop_general_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_tools/svn-code-net-p-jsk-ros-pkg">jsk_tools</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_topic_tools/svn-code-net-p-jsk-ros-pkg">jsk_topic_tools</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/opt_camera/svn-code-net-p-jsk-ros-pkg">opt_camera</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/parallel_util/svn-code-net-p-jsk-ros-pkg">parallel_util</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/posedetection_msgs/svn-code-net-p-jsk-ros-pkg">posedetection_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/rosping/svn-code-net-p-jsk-ros-pkg">rosping</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/stereo_synchronizer/svn-code-net-p-jsk-ros-pkg">stereo_synchronizer</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/eus_nlopt/svn-code-net-p-jsk-ros-pkg">eus_nlopt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/eus_qp/svn-code-net-p-jsk-ros-pkg">eus_qp</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_footstep_controller/svn-code-net-p-jsk-ros-pkg">jsk_footstep_controller</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_footstep_msgs/svn-code-net-p-jsk-ros-pkg">jsk_footstep_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_footstep_planner/svn-code-net-p-jsk-ros-pkg">jsk_footstep_planner</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_ik_server/svn-code-net-p-jsk-ros-pkg">jsk_ik_server</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/2010_05_pr2_workshop/svn-code-net-p-jsk-ros-pkg">2010_05_pr2_workshop</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/detect_cans_in_fridge_201202/svn-code-net-p-jsk-ros-pkg">detect_cans_in_fridge_201202</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/detect_chair_2013_06_pr2/svn-code-net-p-jsk-ros-pkg">detect_chair_2013_06_pr2</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/elevator_move_base_pr2/svn-code-net-p-jsk-ros-pkg">elevator_move_base_pr2</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_2011_07_pr2_semantic/svn-code-net-p-jsk-ros-pkg">jsk_2011_07_pr2_semantic</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_2013_04_pr2_610/svn-code-net-p-jsk-ros-pkg">jsk_2013_04_pr2_610</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_2013_05_pr2_tatu/svn-code-net-p-jsk-ros-pkg">jsk_2013_05_pr2_tatu</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_demo_common/svn-code-net-p-jsk-ros-pkg">jsk_demo_common</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_maps/svn-code-net-p-jsk-ros-pkg">jsk_maps</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_semantic_maps/svn-code-net-p-jsk-ros-pkg">jsk_semantic_maps</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/assimp_devel/svn-code-net-p-jsk-ros-pkg">assimp_devel</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/collada_tools/svn-code-net-p-jsk-ros-pkg">collada_tools</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/eus_assimp/svn-code-net-p-jsk-ros-pkg">eus_assimp</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/euscollada/svn-code-net-p-jsk-ros-pkg">euscollada</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/euslisp_model_conversion_tester/svn-code-net-p-jsk-ros-pkg">euslisp_model_conversion_tester</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/eusurdf/svn-code-net-p-jsk-ros-pkg">eusurdf</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pddl_msgs/svn-code-net-p-jsk-ros-pkg">pddl_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pddl_planner/svn-code-net-p-jsk-ros-pkg">pddl_planner</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pddl_planner_viewer/svn-code-net-p-jsk-ros-pkg">pddl_planner_viewer</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/task_compiler/svn-code-net-p-jsk-ros-pkg">task_compiler</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus/svn-code-net-p-jsk-ros-pkg">pr2eus</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_armnavigation/svn-code-net-p-jsk-ros-pkg">pr2eus_armnavigation</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_impedance/svn-code-net-p-jsk-ros-pkg">pr2eus_impedance</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_moveit/svn-code-net-p-jsk-ros-pkg">pr2eus_moveit</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_openrave/svn-code-net-p-jsk-ros-pkg">pr2eus_openrave</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_tutorials/svn-code-net-p-jsk-ros-pkg">pr2eus_tutorials</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/checkerboard_detector/svn-code-net-p-jsk-ros-pkg">checkerboard_detector</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/cr_calibration/svn-code-net-p-jsk-ros-pkg">cr_calibration</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/cr_capture/svn-code-net-p-jsk-ros-pkg">cr_capture</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/imagesift/svn-code-net-p-jsk-ros-pkg">imagesift</a>
+        
+      
+        
+          <span class="label label-default">jsk_pcl_ros</span>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_perception/svn-code-net-p-jsk-ros-pkg">jsk_perception</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/orbit_pantilt/svn-code-net-p-jsk-ros-pkg">orbit_pantilt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/posedetectiondb/svn-code-net-p-jsk-ros-pkg">posedetectiondb</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/resized_image_transport/svn-code-net-p-jsk-ros-pkg">resized_image_transport</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/baxtereus/svn-code-net-p-jsk-ros-pkg">baxtereus</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/nao_jsk_teleop/svn-code-net-p-jsk-ros-pkg">nao_jsk_teleop</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/naoeus/svn-code-net-p-jsk-ros-pkg">naoeus</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_pr2_accessories/svn-code-net-p-jsk-ros-pkg">jsk_pr2_accessories</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_pr2_desktop/svn-code-net-p-jsk-ros-pkg">jsk_pr2_desktop</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_pr2_startup/svn-code-net-p-jsk-ros-pkg">jsk_pr2_startup</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2_base_trajectory_action/svn-code-net-p-jsk-ros-pkg">pr2_base_trajectory_action</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/euslisp/svn-code-net-p-jsk-ros-pkg">euslisp</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/roseus/svn-code-net-p-jsk-ros-pkg">roseus</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/roseus_smach/svn-code-net-p-jsk-ros-pkg">roseus_smach</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/roseus_tutorials/svn-code-net-p-jsk-ros-pkg">roseus_tutorials</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/android_camera_viewer/svn-code-net-p-jsk-ros-pkg">android_camera_viewer</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/android_image_view/svn-code-net-p-jsk-ros-pkg">android_image_view</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/android_sensor_message/svn-code-net-p-jsk-ros-pkg">android_sensor_message</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/android_voice_message/svn-code-net-p-jsk-ros-pkg">android_voice_message</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/hrp4_pan_tilt/svn-code-net-p-jsk-ros-pkg">hrp4_pan_tilt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_android_gui/svn-code-net-p-jsk-ros-pkg">jsk_android_gui</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_android_gui_api9/svn-code-net-p-jsk-ros-pkg">jsk_android_gui_api9</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_android_setup/svn-code-net-p-jsk-ros-pkg">jsk_android_setup</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_gui_msgs/svn-code-net-p-jsk-ros-pkg">jsk_gui_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_pr2_core_apps/svn-code-net-p-jsk-ros-pkg">jsk_pr2_core_apps</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_rosjava_messages/svn-code-net-p-jsk-ros-pkg">jsk_rosjava_messages</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_smart_gui/svn-code-net-p-jsk-ros-pkg">jsk_smart_gui</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/my_android_package/svn-code-net-p-jsk-ros-pkg">my_android_package</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_interactive/svn-code-net-p-jsk-ros-pkg">jsk_interactive</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_interactive_marker/svn-code-net-p-jsk-ros-pkg">jsk_interactive_marker</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_interactive_test/svn-code-net-p-jsk-ros-pkg">jsk_interactive_test</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_rviz_plugins/svn-code-net-p-jsk-ros-pkg">jsk_rviz_plugins</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/collada_robots/svn-code-net-p-jsk-ros-pkg">collada_robots</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave/svn-code-net-p-jsk-ros-pkg">openrave</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_actionlib/svn-code-net-p-jsk-ros-pkg">openrave_actionlib</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_calibration/svn-code-net-p-jsk-ros-pkg">openrave_calibration</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_database/svn-code-net-p-jsk-ros-pkg">openrave_database</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_msgs/svn-code-net-p-jsk-ros-pkg">openrave_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_robot_control/svn-code-net-p-jsk-ros-pkg">openrave_robot_control</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_robot_filter/svn-code-net-p-jsk-ros-pkg">openrave_robot_filter</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_sensors/svn-code-net-p-jsk-ros-pkg">openrave_sensors</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openraveros/svn-code-net-p-jsk-ros-pkg">openraveros</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openraveros_tutorials/svn-code-net-p-jsk-ros-pkg">openraveros_tutorials</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/orrosplanning/svn-code-net-p-jsk-ros-pkg">orrosplanning</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/roscpp_sessions/svn-code-net-p-jsk-ros-pkg">roscpp_sessions</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/session_tutorials/svn-code-net-p-jsk-ros-pkg">session_tutorials</a>
+        
+      
+    </td>
+  </tr>
+</table>
+<div class="top-buffer">
+  <div class="text-left">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <a target="_blank" href="http://docs.ros.org/fuerte/api/jsk_pcl_ros/html/" type="button" class="btn btn-default inactive"><span class="glyphicon glyphicon-file"></span> API</a>
+      <a target="_blank" href="https://svn.code.sf.net/p/jsk-ros-pkg/code/trunk" type="button" class="btn btn-default"><span class="glyphicon glyphicon-leaf"></span> SRC</a>
+      <a target="_blank" href="http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:jsk_pcl_ros/page:1/" type="button" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a>
+      <a target="_blank" href="http://wiki.ros.org/jsk_pcl_ros" type="button" class="btn btn-default"><span class="glyphicon glyphicon-info-sign"></span> Wiki</a>
+      
+    </div>
+  </div>
+</div>
+<div class="top-buffer distro distro-fuerte">
+  
+<table class="table table-condensed instance-switch">
+  <tr>
+    <td>
+      <div id="repo-switch" class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" style="width: 50px">
+          <a type="button" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="left" title="View Instances" 
+            href="/packages/jsk_pcl_ros"><span class="glyphicon glyphicon-th"></span></a>
+        </div>
+        <div class="btn-group" style="width: 90%" role="group">
+          <div class="dropdown">
+            <!-- TODO: add disabled when only 1 version is known? -->
+            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              <span class="pull-left" style="width: 100%; text-align: left">
+                <span class="pull-right"><span class="caret"></span></span> 
+                <span class="glyphicon glyphicon-none"></span>https://svn.code.sf.net/p/jsk-ros-pkg/code/trunk
+              </span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              
+                <li role="presentation">
+                  <a id="github-jsk-ros-pkg-jsk_recognition" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/github-jsk-ros-pkg-jsk_recognition" data="github-jsk-ros-pkg-jsk_recognition">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://github.com/jsk-ros-pkg/jsk_recognition.git
+                  </a>
+                </li>
+              
+                <li role="presentation">
+                  <a id="svn-code-net-p-jsk-ros-pkg" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/svn-code-net-p-jsk-ros-pkg" data="svn-code-net-p-jsk-ros-pkg">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://svn.code.sf.net/p/jsk-ros-pkg/code/trunk
+                  </a>
+                </li>
+              
+                <li role="presentation">
+                  <a id="jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg" data="jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+            
+          </div>
+        
+          <div class="distro distro-electric">
+            
+              
+              
+              
+              
+
+
+<table class="table">
+  <tr>
+    <td width="100px" class="text-center">
+      <img style="width: 80px" src="/assets/package.png">
+    </td>
+    <td>
+      <h3 style="margin-top: 5px">
+        <a style="text-decoration:none" href="/p/jsk_pcl_ros">jsk_pcl_ros</a> <small>package from <a style="text-decoration:none" href="/r/jsk-ros-pkg/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk-ros-pkg</a> repo</small>
+      </h3>
+      
+        
+          <a class="label label-primary" href="/p/aques_talk/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">aques_talk</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/crlibm/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">crlibm</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/downward/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">downward</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/ff/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">ff</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/ffha/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">ffha</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jtalk/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jtalk</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/julius/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">julius</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/libsiftfast/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">libsiftfast</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/nlopt/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">nlopt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/python_twitter/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">python_twitter</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/python_twoauth/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">python_twoauth</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/voice_text/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">voice_text</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/dynamic_tf_publisher/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">dynamic_tf_publisher</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_data/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_data</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_hark_msgs/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_hark_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_joy/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_joy</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_openni_kinect/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_openni_kinect</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/kinect_near_mode_calibration/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">kinect_near_mode_calibration</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openni_pointer/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openni_pointer</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openni_scene/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openni_scene</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openni_swipe/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openni_swipe</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/collada_urdf_jsk_patch/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">collada_urdf_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/depth_image_proc_jsk_patch/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">depth_image_proc_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/ee_cart_imped_jsk_patch/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">ee_cart_imped_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/image_view2/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">image_view2</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/image_view_jsk_patch/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">image_view_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/laser_filters_jsk_patch/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">laser_filters_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/move_arm_jsk_patch/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">move_arm_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/multi_map_server/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">multi_map_server</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openni_tracker_jsk_patch/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openni_tracker_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2_groovy_patches/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2_groovy_patches</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2_teleop_general_jsk_patch/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2_teleop_general_jsk_patch</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_tools/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_tools</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_topic_tools/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_topic_tools</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/opt_camera/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">opt_camera</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/parallel_util/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">parallel_util</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/posedetection_msgs/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">posedetection_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/rosping/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">rosping</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/stereo_synchronizer/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">stereo_synchronizer</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/eus_nlopt/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">eus_nlopt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/eus_qp/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">eus_qp</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_footstep_controller/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_footstep_controller</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_footstep_msgs/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_footstep_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_footstep_planner/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_footstep_planner</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_ik_server/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_ik_server</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/2010_05_pr2_workshop/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">2010_05_pr2_workshop</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/detect_cans_in_fridge_201202/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">detect_cans_in_fridge_201202</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/detect_chair_2013_06_pr2/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">detect_chair_2013_06_pr2</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/elevator_move_base_pr2/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">elevator_move_base_pr2</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_2011_07_pr2_semantic/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_2011_07_pr2_semantic</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_2013_04_pr2_610/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_2013_04_pr2_610</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_2013_05_pr2_tatu/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_2013_05_pr2_tatu</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_demo_common/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_demo_common</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_maps/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_maps</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_semantic_maps/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_semantic_maps</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/assimp_devel/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">assimp_devel</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/collada_tools/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">collada_tools</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/eus_assimp/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">eus_assimp</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/euscollada/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">euscollada</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/euslisp_model_conversion_tester/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">euslisp_model_conversion_tester</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/eusurdf/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">eusurdf</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pddl_msgs/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pddl_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pddl_planner/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pddl_planner</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pddl_planner_viewer/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pddl_planner_viewer</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/task_compiler/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">task_compiler</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2eus</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_armnavigation/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2eus_armnavigation</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_impedance/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2eus_impedance</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_moveit/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2eus_moveit</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_openrave/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2eus_openrave</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2eus_tutorials/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2eus_tutorials</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/checkerboard_detector/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">checkerboard_detector</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/cr_calibration/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">cr_calibration</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/cr_capture/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">cr_capture</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/imagesift/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">imagesift</a>
+        
+      
+        
+          <span class="label label-default">jsk_pcl_ros</span>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_perception/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_perception</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/orbit_pantilt/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">orbit_pantilt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/posedetectiondb/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">posedetectiondb</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/resized_image_transport/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">resized_image_transport</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/baxtereus/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">baxtereus</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/nao_jsk_teleop/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">nao_jsk_teleop</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/naoeus/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">naoeus</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_pr2_accessories/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_pr2_accessories</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_pr2_desktop/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_pr2_desktop</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_pr2_startup/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_pr2_startup</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/pr2_base_trajectory_action/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">pr2_base_trajectory_action</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/euslisp/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">euslisp</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/roseus/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">roseus</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/roseus_smach/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">roseus_smach</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/roseus_tutorials/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">roseus_tutorials</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/android_camera_viewer/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">android_camera_viewer</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/android_image_view/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">android_image_view</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/android_sensor_message/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">android_sensor_message</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/android_voice_message/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">android_voice_message</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/hrp4_pan_tilt/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">hrp4_pan_tilt</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_android_gui/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_android_gui</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_android_gui_api9/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_android_gui_api9</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_android_setup/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_android_setup</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_gui_msgs/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_gui_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_pr2_core_apps/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_pr2_core_apps</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_rosjava_messages/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_rosjava_messages</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_smart_gui/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_smart_gui</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/my_android_package/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">my_android_package</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_interactive/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_interactive</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_interactive_marker/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_interactive_marker</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_interactive_test/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_interactive_test</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/jsk_rviz_plugins/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">jsk_rviz_plugins</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/collada_robots/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">collada_robots</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openrave</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_actionlib/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openrave_actionlib</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_calibration/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openrave_calibration</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_database/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openrave_database</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_msgs/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openrave_msgs</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_robot_control/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openrave_robot_control</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_robot_filter/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openrave_robot_filter</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openrave_sensors/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openrave_sensors</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openraveros/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openraveros</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/openraveros_tutorials/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">openraveros_tutorials</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/orrosplanning/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">orrosplanning</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/roscpp_sessions/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">roscpp_sessions</a>
+        
+      
+        
+          <a class="label label-primary" href="/p/session_tutorials/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">session_tutorials</a>
+        
+      
+    </td>
+  </tr>
+</table>
+<div class="top-buffer">
+  <div class="text-left">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <a target="_blank" href="http://docs.ros.org/electric/api/jsk_pcl_ros/html/" type="button" class="btn btn-default inactive"><span class="glyphicon glyphicon-file"></span> API</a>
+      <a target="_blank" href="https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk" type="button" class="btn btn-default"><span class="glyphicon glyphicon-leaf"></span> SRC</a>
+      <a target="_blank" href="http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:jsk_pcl_ros/page:1/" type="button" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a>
+      <a target="_blank" href="http://wiki.ros.org/jsk_pcl_ros" type="button" class="btn btn-default"><span class="glyphicon glyphicon-info-sign"></span> Wiki</a>
+      
+    </div>
+  </div>
+</div>
+<div class="top-buffer distro distro-electric">
+  
+<table class="table table-condensed instance-switch">
+  <tr>
+    <td>
+      <div id="repo-switch" class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" style="width: 50px">
+          <a type="button" class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="left" title="View Instances" 
+            href="/packages/jsk_pcl_ros"><span class="glyphicon glyphicon-th"></span></a>
+        </div>
+        <div class="btn-group" style="width: 90%" role="group">
+          <div class="dropdown">
+            <!-- TODO: add disabled when only 1 version is known? -->
+            <button class="btn btn-xs btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              <span class="pull-left" style="width: 100%; text-align: left">
+                <span class="pull-right"><span class="caret"></span></span> 
+                <span class="glyphicon glyphicon-none"></span>https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk
+              </span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              
+                <li role="presentation">
+                  <a id="github-jsk-ros-pkg-jsk_recognition" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/github-jsk-ros-pkg-jsk_recognition" data="github-jsk-ros-pkg-jsk_recognition">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://github.com/jsk-ros-pkg/jsk_recognition.git
+                  </a>
+                </li>
+              
+                <li role="presentation">
+                  <a id="svn-code-net-p-jsk-ros-pkg" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/svn-code-net-p-jsk-ros-pkg" data="svn-code-net-p-jsk-ros-pkg">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://svn.code.sf.net/p/jsk-ros-pkg/code/trunk
+                  </a>
+                </li>
+              
+                <li role="presentation">
+                  <a id="jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg" role="menuitem" tabindex="-1" href="/p/jsk_pcl_ros/jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg" data="jsk-ros-pkg-svn-sourceforge-net-svnroot-jsk-ros-pkg">
+                    <span class="glyphicon glyphicon-none"></span>
+                    https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+            
+          </div>
+        
+          <div class="distro distro-diamondback">
+            
+          </div>
         
       </div>
-    
-      <div class="distro distro-hydro">
+    </div>
+  </div>
+</div>
+
+  <div class="distro distro-indigo">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>indigo</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
+  <div class="distro distro-hydro">
+    <div class="container-fluid">
+      
         
-        <em>No branch for distro <strong>hydro</strong>. Known supported distros are highlighted in the buttons above.</em>
+        
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h3 class="panel-title">Package Summary</h3></div>
+      <div class="panel-body">
+        jsk_pcl_ros
+      </div>
+      <div class="panel-heading"><h3 class="panel-title">Status</h3></div>
+      <div class="panel-body" style="overflow-x: auto">
+        <table class="table table-condensed">
+          <tr>
+            <td class="text-right"><b>Source URI</b></td>
+            <td width="100%"><a class="label label-default" href="https://github.com/jsk-ros-pkg/jsk_recognition.git">https://github.com/jsk-ros-pkg/jsk_recognition.git</a></td>
+          </tr>
+          <tr>
+            <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+            <td>
+              
+                <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2015-01-19
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Build Type</b></td>
+            <td>
+              
+                <span class="label label-info">
+              
+              CATKIN</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Released</b></td>
+            <td>
+              
+                <span class="label label-primary"><span class="glyphicon glyphicon-flash"></span> RELEASED
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Dev Status</b></td>
+            <td>
+              
+                
+                  <span class="label label-primary">
+                
+                MAINTAINED
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="panel-heading"><h3 class="panel-title">Tags</h3></div>
+      <div class="panel-body">
+        
+        
+          <em>No tags defined.</em>
         
       </div>
-    
-      <div class="distro distro-groovy">
-        
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4 class="panel-title">Details</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          <li><strong>Version:</strong> 0.1.32</li>
+          <li><strong>License:</strong> BSD</li>
+        </ul>
+      </div>
+      <div class="panel-heading"><h4 class="panel-title">Maintainers</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
           
-          <div class="panel panel-default">
-            <div class="panel-heading">README</div>
-            <div class="readme-" style="margin: 20px">
-              <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+            <li>Youhei Kakiuchi</li>
+          
+        </ul>
+      </div>
+      <div class="panel-heading"><h4 class="panel-title">Authors</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          
+            <li>Yohei Kakiuchi</li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-file"></span> README</div>
+      <div class="panel-body">
+        
+          <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
 <html><body><div class="rendered-markdown">
 <h1>jsk_pcl_ros</h1>
 
@@ -241,13 +1731,806 @@ time end
 
 <h2>nodelets</h2>
 
+<h3>jsk_pcl/PolygonToMaskImage</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/polygon_to_mask_image.png" alt=""></p>
+
+<p>Convert polygon into mask image.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+</ul>
+<p>Input 3-D polygon.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Input camera info to project 3-D polygon.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Mask image to fill <code>~input</code> polygon. Currently only convex polygon is supported.</p>
+
+<h3>jsk_pcl/MaskImageFilter</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/mask_image_filter.png" alt=""></p>
+
+<p>Extract indices of pointcloud which is masked by mask image. The pointcloud is no need to be organized.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input point cloud.
+* <code>~input/mask</code> (<code>sensor_msgs/Image</code>)</p>
+
+<p>Mask image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Camera parameters of the image.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Indices of the points masked by <code>~input/mask</code>.</p>
+
+<h3>jsk_pcl/ROIToRect</h3>
+
+<p>Convert camera info with ROI to <code>geometry_msgs/PolygonStamped</code>.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Input camera info with ROI filled.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+</ul>
+<p>Output rectangle region.</p>
+
+<h3>jsk_pcl/ROIToMaskImage</h3>
+
+<p>Convert camera info with ROI to mask image.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Input camera info with ROI filled.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Output mask image.</p>
+
+<h3>jsk_pcl/MaskImageToROI</h3>
+
+<p>Convert a mask image into camera info with roi.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Input mask image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Original camera info.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Camera info with ROI field filled.</p>
+
+<h3>jsk_pcl/MaskImageToRect</h3>
+
+<p>Convert a mask image into geometry_msgs::PolygonStamped.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Input mask image.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+</ul>
+<p>PolygonStamped message which only contains two points. Minimum point and Maximum point to represent bounding box in image.</p>
+
+<h3>jsk_pcl/MaskImageToRect</h3>
+
+<h3>jsk_pcl/TorusFInder</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/torus_finder.png" alt=""></p>
+
+<p>Find a torus out of pointcloud based on RANSAC with 3-D circle model.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Input pointcloud. You may need to choose good candidates of pointcloud.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>jsk_pcl_ros/Torus</code>)</li>
+</ul>
+<p>Output of detection.</p>
+
+<ul>
+<li>
+<code>~output/inliers</code> (<code>pcl_msgs/PointIndices</code>)</li>
+<li>
+<code>~output/coefficients</code> (<code>pcl_msgs/ModelCoefficients</code>)</li>
+</ul>
+<p>Inliers and coefficients which represents detection result.
+* <code>~output/array</code> (<code>jsk_pcl_ros/TorusArray</code>)</p>
+
+<p>Array of torus. It will be used for visualization.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~min_radius</code> (Double, default: <code>0.1</code>)</li>
+<li>
+<code>~max_radius</code> (Double, default: <code>1.0</code>)</li>
+</ul>
+<p>Minimum and maximum radius of torus.
+* <code>~min_size</code> (Integer, default: <code>10</code>)</p>
+
+<p>Minimum number of inliers.
+* <code>~outlier_threshold</code> (Double, default: <code>0.01</code>)</p>
+
+<p>Outlier threshold used in RANSAC.
+* <code>~max_iterations</code> (Integer, default: <code>100</code>)</p>
+
+<p>Maximum number of iterations of RANSAC.</p>
+
+<h3>jsk_pcl/RectToROI</h3>
+
+<p>Convert rectangle (<code>geometry_msgs/Polygon</code>) into ROI with camera info (<code>sensor_msgs/CameraInfo</code>).</p>
+
+<p>We expect it will be used with image_view2.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>geometry_msgs/Polygon</code>)</li>
+</ul>
+<p>Polygon to represent rectangle region of image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Original camera info.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>camera info with ROI filled by <code>~input</code>.</p>
+
+<h3>jsk_pcl/RectToMaskImage</h3>
+
+<p>Convert rectangle (<code>geometry_msgs/Polygon</code>) into mask image (<code>sensor_msgs/Image</code>)</p>
+
+<p>We expect it will be used with image_view2.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>geometry_msgs/Polygon</code>)</li>
+</ul>
+<p>Polygon to represent rectangle region of image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Original camera info.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Mask image.</p>
+
+<h3>jsk_pcl/AddColorFromImage</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/add_color_from_image" alt=""></p>
+
+<p>Add color to pointcloud (no need to be organized) from image and camera info.</p>
+
+<h3>Subscribing Topic</h3>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Input point cloud to add color. No need to be an organized pointcloud.
+* <code>~input/image</code> (<code>sensor_msgs/Image</code>)</p>
+
+<p>BGR8 color image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Camera parameters of <code>~input/image</code></p>
+
+<h3>Publishing Topic</h3>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Output colored pointcloud.</p>
+
+<h3>jsk_pcl/PlaneConcatenator</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//image/plane_concatenator.png" alt=""></p>
+
+<p>Concatenate near planes and build new set of planes.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud.
+* <code>~input/indices</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>)
+* <code>~input/polygons</code> (<code>jsk_pcl_ros/PolygonArray</code>)
+* <code>~input/coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>)
+  Input planes.</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output/indices</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>)</li>
+<li>
+<code>~output/polygons</code> (<code>jsk_pcl_ros/PolygonArray</code>)</li>
+<li>
+<code>~output/coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>)
+Concatenated planes. Coefficients parameters are refined by RANSAC.</li>
+</ul>
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~connect_angular_threshold</code> (Double, default: <code>0.1</code>)</li>
+</ul>
+<p>Angular threshold to regard two planes as near.
+* <code>~connect_distance_threshold</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Euclidean distance threshold to regard two planes as near.
+* <code>~ransac_refinement_max_iteration</code> (Integer, default: <code>100</code>)</p>
+
+<p>The maximum number of iteration of RANSAC refinement.
+* <code>~ransac_refinement_outlier_threshold</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Outlier threshold of RANSAC refinmenet.
+* <code>~ransac_refinement_eps_angle</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Eps angle threshold of RANSAC refinment using normal direction of the plane.</p>
+
+<h3>jsk_pcl/SupervoxelSegmentation</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/supervoxel_segmentation.png" alt=""></p>
+
+<p>Segment pointcloud based on Supervoxel technique.
+see Voxel Cloud Connectivity Segmentation - Supervoxels for Point Clouds (J. Papon et al. CVPR2013).</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud. It should have rgb field.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Output pointcloud downsampled by voxel grid.</p>
+
+<ul>
+<li>
+<code>~output/indices</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>)</li>
+</ul>
+<p>Clustering result.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~color_importance</code> (<code>Double</code>, default: <code>0.2</code>)</li>
+</ul>
+<p>Color importance factor.
+* <code>~spatial_importance</code> (<code>Double</code>, default: <code>0.4</code>)</p>
+
+<p>Spatial importance factor.
+* <code>~normal_importance</code> (<code>Double</code>, default: <code>1.0</code>)</p>
+
+<p>Normal importance factor.
+* <code>~use_transform</code> (<code>Boolean</code>, default: <code>True</code>)</p>
+
+<p>Use single cloud transform
+* <code>~seed_resolution</code> (<code>Double</code>, default: <code>0.1</code>)</p>
+
+<p>Seed resolution of super voxels.
+* <code>~voxel_resolution</code> (<code>Double</code>, default: <code>0.008</code>)</p>
+
+<p>Voxel grid resolution of super voxels.</p>
+
+<h3>jsk_pcl/IncrementalModelRegistration</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/incremental_model_registration.png" alt=""></p>
+
+<p>Build a full-model from sequential captured data.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud. RGB field is required.
+* <code>~input/pose</code> (<code>geometry_msgs/PoseStamped</code>)</p>
+
+<p>Initial pose to estimate acculate pose of the pointcloud.
+* <code>~input/indices</code> (<code>pcl_msgs/PointIndices</code>)</p>
+
+<p>Indices to mask object in <code>~input</code> pointcloud.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/non_registered</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Pointcloud just concatenated according to <code>~input/pose</code></p>
+
+<ul>
+<li>
+<code>~output/registered</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Pointcloud refined by ICP.</p>
+
+<h4>Using Services</h4>
+
+<ul>
+<li>
+<code>~icp_service</code> (<code>jsk_pcl_ros/ICPAlign</code>)</li>
+</ul>
+<p>ICP service interface to refine model.</p>
+
+<h3>jsk_pcl/IntermittentImageAnnotator</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/intermittent_image_annotator.png" alt=""><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/intermittent_image_annotator_pointcloud_clip.png" alt=""></p>
+
+<ol>
+<li>Store images when <code>~shutter</code> service is called</li>
+<li>Publish snapshots as one concatenated image</li>
+<li>Subscribe <code>~output/screenrectangle</code> to get ROI.</li>
+<li>Publish ROI information to <code>~output</code> namespace.</li>
+<li>Publish pointcloud inside of the ROI to <code>~output/cloud</code> if <code>~store_pointcloud</code> is set</li>
+</ol>
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input/image</code> and <code>~input/camera_info</code> (<code>sensor_msgs/Image</code> and <code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Input image and camera info.</p>
+
+<ul>
+<li>
+<code>~input/cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud to be clipped by specified ROI.</p>
+
+<ul>
+<li>
+<code>~output/screenrectangle</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+</ul>
+<p>ROI. We expect to use <a href="https://github.com/jsk-ros-pkg/jsk_common/tree/master/jsk_ros_patch/image_view2">image_view2</a>.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Snapshots as one concatenated image.</p>
+
+<ul>
+<li>
+<code>~output/direction</code> (<code>geometry_msgs/PoseStamped</code>)</li>
+</ul>
+<p>Direction of ROI as <code>PoseStamped</code>. z-axis directs the center of ROI.</p>
+
+<ul>
+<li>
+<code>~output/roi</code> (<code>jsk_pcl_ros/PosedCameraInfo</code>)</li>
+</ul>
+<p>Publish ROI of specified region as <code>PosedCameraInfo</code>.</p>
+
+<ul>
+<li>
+<code>~output/cloud</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Pointcloud inside of ROI. pointcloud is stored when <code>~shutter</code> service is called and
+  its timestamp will be updated according to the latest image.</p>
+
+<ul>
+<li>
+<code>~output/marker</code> (<code>visualization_msgs/Marker</code>)</li>
+</ul>
+<p>Marker to visualize ROI (<code>~output/roi</code>).</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~fixed_frame_id</code> (<code>String</code>, default: <code>odom</code>)</li>
+</ul>
+<p>Fixed frame id to resolve tf.</p>
+
+<ul>
+<li>
+<code>~max_image_buffer</code> (<code>Integer</code>, default: <code>5</code>)</li>
+</ul>
+<p>The maximum number of images to store in this nodelet.</p>
+
+<ul>
+<li>
+<code>~store_pointcloud</code> (<code>Boolean</code>, default: <code>false</code>)</li>
+</ul>
+<p>Store pointcloud if it's true</p>
+
+<ul>
+<li>
+<code>~keep_organized</code> (<code>Boolean</code>, default: <code>false</code>)</li>
+</ul>
+<p>Keep pointcloud organized after clipping by specified ROI.</p>
+
+<h4>Advertising Service</h4>
+
+<ul>
+<li>
+<code>~shutter</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Take a snapshot</p>
+
+<ul>
+<li>
+<code>~clear</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Clear images stored in the nodelet.</p>
+
+<h3>jsk_pcl/LINEMODDetector</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/linemod_detector.png" alt=""></p>
+
+<p>A nodelet to detect object using LINEMOD.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Result of detection as pointcloud.</p>
+
+<ul>
+<li>
+<code>~output/mask</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Result of detection as mask image.</p>
+
+<ul>
+<li>
+<code>~output/pose</code> (<code>geometry_msgs/PoseStamped</code>)</li>
+</ul>
+<p>Pose of detected template</p>
+
+<ul>
+<li>
+<code>~output/template</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Template pointcloud at identity pose.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~template_file</code> (<code>String</code>, default: <code>template</code>)</li>
+</ul>
+<p>Template file
+* <code>~gradient_magnitude_threshold</code> (<code>Double</code>, default: <code>10.0</code>)</p>
+
+<p>Gradient maginutude threshold</p>
+
+<ul>
+<li>
+<code>~detection_threshold</code> (<code>Double</code>, default: <code>0.75</code>)</li>
+</ul>
+<p>Detection threshold</p>
+
+<h3>jsk_pcl/LINEMODTrainer</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/linemod_trainer.png" alt=""></p>
+
+<p>A nodelet to train LINEMOD data from pointcloud and indices to mask the objects.
+This nodelet stores data of pointcloud and if you call <code>~start_training</code> service,
+it will train the data and dump the templates into lmt file.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>This pointcloud should be able to be converted into <code>pcl::PointXYZRGBA</code> data.
+* <code>~input/indices</code> (<code>pcl_msgs/PointIndices</code>)</p>
+
+<p>Indices to mask object in <code>~input</code> pointcloud.</p>
+
+<ul>
+<li>
+<code>~input/info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Camera parameter to sample viewpoint.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/range_image</code> (<code>sensor_msgs/Image</code>)</li>
+<li>
+<code>~output/colored_range_image</code> (<code>sensor_msgs/Image</code>)</li>
+<li>
+<code>~output/sample_cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Image and pointcloud generated by viewpoint sampling.</p>
+
+<h4>Advertising Servicies</h4>
+
+<ul>
+<li>
+<code>~start_training</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Start training and dump result into a file.</p>
+
+<ul>
+<li>
+<code>~clear_data</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Clear stored data.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~output_file</code> (<code>String</code>, default: <code>template</code>)</li>
+</ul>
+<p>A file path to dump trained data.</p>
+
+<ul>
+<li>
+<code>~sample_viewpoint</code> (<code>Bool</code>, default: <code>True</code>)</li>
+</ul>
+<p>Generate training data by samplingenerating viewpoint if this parameter is set to true.</p>
+
+<ul>
+<li>
+<code>~sample_viewpoint_angle_step</code> (<code>Double</code>, default: <code>40.0</code>)</li>
+<li>
+<code>~sample_viewpoint_angle_min</code> (<code>Double</code>, default: <code>-80.0</code>)</li>
+<li>
+<code>~sample_viewpoint_angle_max</code> (<code>Double</code>, default: <code>80.0</code>)</li>
+<li>
+<code>~sample_viewpoint_radius_step</code> (<code>Double</code>, default: <code>0.2</code>)</li>
+<li>
+<code>~sample_viewpoint_radius_min</code> (<code>Double</code>, default: <code>0.4</code>)</li>
+<li>
+<code>~sample_viewpoint_radius_max</code> (<code>Double</code>, default: <code>0.8</code>)</li>
+</ul>
+<p>Viewpoint sampling parameters. Pose of model is sampled by golden ratio spatial technique.</p>
+
+<h3>jsk_pcl/CaptureStereoSynchronizer</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/capture_stereo_synchronizer.png" alt=""></p>
+
+<p>A nodelet to capture training data of stereo cameras. It subscribe several messages with
+synchronizing timestamp and republish them into <code>~output</code> namespace.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input/pose</code> (<code>geometry_msgs/PoseStamped</code>)</li>
+</ul>
+<p>Pose of checkerboard</p>
+
+<ul>
+<li>
+<code>~input/mask</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Mask image of the object</p>
+
+<ul>
+<li>
+<code>~input/mask_indices</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Pointcloud indices of the object</p>
+
+<ul>
+<li>
+<code>~input/left_image</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Left camera image</p>
+
+<ul>
+<li>
+<code>~input/left_camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Left camera parameter</p>
+
+<ul>
+<li>
+<code>~input/right_camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Right camera parameter</p>
+
+<ul>
+<li>
+<code>~input/disparity</code> (<code>stereo_msgs/Disparity</code>)</li>
+</ul>
+<p>Disparity image of the stereo camear.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/pose</code> (<code>geometry_msgs/PoseStamped</code>)</li>
+<li>
+<code>~output/mask</code> (<code>sensor_msgs/Image</code>)</li>
+<li>
+<code>~output/mask_indices</code> (<code>pcl_msgs/PointIndices</code>)</li>
+<li>
+<code>~output/left_image</code> (<code>sensor_msgs/Image</code>)</li>
+<li>
+<code>~output/left_camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+<li>
+<code>~output/right_camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+<li>
+<code>~output/disparity</code> (<code>stereo_msgs/Disparity</code>)</li>
+</ul>
+<p>These topics are the same message to the <code>~input/foo</code> messages but all of them
+  are republished only if input messages are synchronized.</p>
+
+<h4>Sample</h4>
+
+<p>Please check <a href="launch/capture_multisense_training_data.launch">capture_multisense_training_data.launch</a>.</p>
+
+<h3>jsk_pcl/MaskImageToPointIndices</h3>
+
+<p>A nodelet to convert mask image (<code>sensor_msgs::Image</code>) to <code>pcl_msgs/PointIndices</code> for
+organized pointcloud.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Input mask image.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Output indices converted from the mask image.</p>
+
+<h3>jsk_pcl/PointIndicesToMaskImage</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/point_indices_to_mask_image.png" alt=""></p>
+
+<p>jsk_pcl/PointIndicesToMaskImage generates mask image from <code>pcl_msgs/PointIndices</code>
+of organized pointcloud and original <code>sensor_msgs/Image</code>.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Indices of the point cloud to mask.</p>
+
+<ul>
+<li>
+<code>~input/image</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>In order to know width and height of the original image, jsk_pcl/PointIndicesToMaskImage requires
+   input image.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code>(<code>sensor_msg/Image</code>)</li>
+</ul>
+<p>Mask image to get <code>~input</code> indices from the origina limage.</p>
+
 <h3>jsk_pcl/AttentionClipper</h3>
 
 <h4>What Is This</h4>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/attention_clipper.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/attention_clipper.png" alt=""></p>
 
-<p>It retrives <code>sensor_msgs/CameraInfo</code> and publish <code>sensor_msgs/CameraInfo</code> with ROI filled.</p>
+<p>It retrives <code>sensor_msgs/CameraInfo</code> and publish <code>sensor_msgs/CameraInfo</code> with ROI filled and
+retirieves <code>sensor_msgs/PointCloud2</code> and publish <code>pcl_msgs/PointIndices</code>.</p>
 
 <p>You can specify the pose and size of the interest bounding box and jsk_pcl/AttentionClipper returns ROI
 to see the object.</p>
@@ -258,20 +2541,48 @@ to see the object.</p>
 <li>
 <code>~input</code> (<code>sensor_msgs/CameraInfo</code>)</li>
 </ul>
-<p>Original camera info.
-* <code>~pose</code> (<code>geometry_msgs/PoseStamped</code>)</p>
-
-<p>Specify the pose of the bounding box. timestamp will be ignored and camera info's timestamp will be used.</p>
-
-<h4>Publishing Topic</h4>
+<p>Original camera info.</p>
 
 <ul>
+<li>
+<code>~input/points</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Original pointcloud.
+* <code>~input/pose</code> (<code>geometry_msgs/PoseStamped</code>)
+* <code>~input/box</code> (<code>jsk_pcl_ros/BoundingBox</code>)
+  Specify the pose of the bounding box. Timestamp will be ignored and camera info's timestamp will be used. If you use <code>~input/box</code>, you can change the size of attention region. There callbacks are only enabled if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~input/pose_array</code> (<code>geometry_msgs/PoseArray</code>)</li>
+<li>
+<code>~input/box_array</code> (<code>jsk_pcl_ros/BoundingBoxArray</code>)
+It's an array version of <code>~input/pose</code> and <code>~input/box</code>. There callbacks are only enabled if <code>~use_multiple_attention</code> is true.
+#### Publishing Topic</li>
 <li>
 <code>~output</code> (<code>sensor_msgs/CameraInfo</code>)</li>
 </ul>
 <p>This camera info is same with <code>~input</code> except for roi field.</p>
 
+<ul>
+<li>
+<code>~output/mask</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Mask image to mask the regions of specified interest.</p>
+
+<ul>
+<li>
+<code>~output/point_indices</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Indices of <code>~input/points</code> which are inside of interest regions.</p>
+
 <h4>Parameter</h4>
+
+<ul>
+<li>
+<code>~use_multiple_attention</code> (Boolean, default: <code>False</code>)</li>
+</ul>
+<p>If you want to enable multiple attentions, please set this variable True.</p>
 
 <ul>
 <li>
@@ -281,13 +2592,50 @@ to see the object.</p>
 <li>
 <code>~dimension_z</code> (Double, default: <code>0.1</code>)</li>
 </ul>
-<p>Size of bounding box</p>
+<p>Size of bounding box. Available only if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~frame_id</code> (String, default: <code>base_link</code>)</li>
+</ul>
+<p>Frame id of attention region. Available only if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~initial_pos</code> (Array of double, default: <code>None</code>):</li>
+</ul>
+<p>Initial pose of interesting region. Available only if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~initial_rot</code> (Array of double, default: <code>None</code>):</li>
+</ul>
+<p>Initial orientation of interesting region. The value should be represented in
+  [roll, pitch, yaw]. Available only if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~initial_pos_list</code> (Array of array of double, default: <code>None</code>)</li>
+<li>
+<code>~initial_rot_list</code> (Array of array of double, default: <code>None</code>)</li>
+<li>
+<code>~frame_id_list</code> (Array of string, default: <code>None</code>)</li>
+<li>
+<code>~dimensions</code> (Array of array of double, default: <code>None</code>)</li>
+</ul>
+<p>Position, Rotation, frame id and Dimensions of multiple attention regions respectively.
+  <code>~iniital_pos_list</code> should follow <code>[[x, y, z], ...]</code>,
+  <code>~initial_rot_list</code> should follow <code>[[rx, ry, rz], ...]</code> and
+  <code>~dimensions</code> should follow <code>[[x, y, z], ...]</code>.
+  Available only if <code>~use_multiple_attention</code> is true.</p>
 
 <h3>jsk_pcl/ROIClipper</h3>
 
 <h4>What Is This</h4>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/attention_clipper.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/attention_clipper.png" alt=""></p>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/roi_clipper_pointcloud.png" alt=""></p>
 
 <p>It retrives <code>sensor_msgs/Image</code> and <code>sensor_msgs/CameraInfo</code> and publish <code>sensor_msgs/Image</code> of ROI.
 It is similar to <code>image_proc/crop_decimate</code> but you can use <code>CameraInfo/roi</code> field to specify ROI.</p>
@@ -305,7 +2653,13 @@ It is similar to <code>image_proc/crop_decimate</code> but you can use <code>Cam
 
 <p>Camera parameter and ROI field should be filled.</p>
 
-<p>These two topic should be synchronized.</p>
+<p>These two topic should be synchronized if <code>~not_sync</code> is not false.</p>
+
+<ul>
+<li>
+<code>~input/cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>This topic is only enabled if <code>~not_sync</code> is true.</p>
 
 <h4>Publishing Topic</h4>
 
@@ -315,9 +2669,30 @@ It is similar to <code>image_proc/crop_decimate</code> but you can use <code>Cam
 </ul>
 <p>Image of ROI.</p>
 
+<ul>
+<li>
+<code>~output/point_indices</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>The indices of the pointcloud which is inside of the interest 3-D region.</p>
+
+<ul>
+<li>
+<code>~output/cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>PointCloud clipped from <code>~input/cloud</code> and <code>~input/camera_info</code>.</p>
+
+<h4>Parameter</h4>
+
+<ul>
+<li>
+<code>~not_sync</code> (Bool, default: <code>False</code>)</li>
+</ul>
+<p>If ~not_sync is true, do not need to synchronize camera info and other input topics, and
+  pointcloud clipping is enabled.</p>
+
 <h3>jsk_pcl/NormalDirectionFilter</h3>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/normal_direction_filter.png" alt="NormalDirectionFilter"></p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/normal_direction_filter.png" alt="NormalDirectionFilter"></p>
 
 <p>jsk_pcl/NormalDirectionFilter filters pointcloud based on the direction of the normal.
 It can filters pointcloud based on <strong>static</strong> direction and direction based on imu linear_acceleration.</p>
@@ -360,7 +2735,7 @@ It can filters pointcloud based on <strong>static</strong> direction and directi
 
 <h3>jsk_pcl/MultiPlaneExtraction</h3>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/multi_plane_extraction.png" alt="MultiPlaneExtraction"></p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/multi_plane_extraction.png" alt="MultiPlaneExtraction"></p>
 
 <p>Extract the points above the planes between <code>~min_height</code> and <code>~max_height</code>.</p>
 
@@ -375,7 +2750,7 @@ It can filters pointcloud based on <strong>static</strong> direction and directi
 * <code>~input_polygons</code> (<code>jsk_pcl_ros/PolygonArray</code>)
 * <code>~input_coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>):</p>
 
-<p>The input planes.</p>
+<p>The input planes. If <code>~use_indices</code> parameter is false, <code>~indices</code> will not be used.</p>
 
 <h4>Publishing Topics</h4>
 
@@ -401,15 +2776,23 @@ It can filters pointcloud based on <strong>static</strong> direction and directi
 
 <p>Queue length for subscribing topics.</p>
 
+<ul>
+<li>
+<code>~use_indices</code> (Bool, default: <code>True</code>)</li>
+</ul>
+<p>Use indices of planar regions to filter if it's set true.
+   You can disable this parameter to filter pointcloud which is not the same pointcloud
+   to segment planes</p>
+
 <h3>jsk_pcl/RegionGrowingMultiplePlaneSegmentation</h3>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/region_growing_multiple_plane_segmentation.png" alt="jsk_pcl/RegionGrowingMultiplePlaneSegmentation">.</p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/region_growing_multiple_plane_segmentation.png" alt="jsk_pcl/RegionGrowingMultiplePlaneSegmentation">.</p>
 
 <p>jsk_pcl/RegionGrowingMultiplePlaneSegmentation estimates multiple plenes from pointcloud.</p>
 
 <p>It extracts planes based on <a href="http://en.wikipedia.org/wiki/Region_growing">region growing</a>
 and evaluation function of connectivity if based on the following equation:
-<img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/region_growing_multiple_plane_segmentation_eq.gif" alt=""></p>
+<img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/region_growing_multiple_plane_segmentation_eq.gif" alt=""></p>
 
 <h4>Subscribing Topics</h4>
 
@@ -646,6 +3029,14 @@ You can choose several types of tilt/spindle lasers such as tilt-laser of PR2, i
    It should be remapped to <code>assemble_scans2</code> service of
    <a href="http://wiki.ros.org/laser_assembler">laser_assembler</a>.</p>
 
+<h4>Advertising Service</h4>
+
+<ul>
+<li>
+<code>~clear_cache</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Clear cache and restart collecting data.</p>
+
 <h4>Parameters</h4>
 
 <ul>
@@ -669,7 +3060,11 @@ You can choose several types of tilt/spindle lasers such as tilt-laser of PR2, i
    4. <code>infinite_spindle</code>: Infinite spindle laser. TiltLaserListener publishes time range to rotate laser 360 degrees.
    5. <code>infinite_spindle_half</code>: Infinite spindle laser, but most of laser has over 180 degrees range of field.
    Therefore we don't need to rotate laser 360 degrees to scan 3-D space, just 180 degree rotation is required.
-   In this mode, TiltLaserListener publishes time range a time range of 180 degree rotation.</p>
+   In this mode, TiltLaserListener publishes time range a time range of 180 degree rotation.
+* <code>~overwrap_angle</code> (Double, default: <code>0.0</code>)</p>
+
+<p>overwrap angle offset when detecting time range.
+   Only available in <code>infinite_spindle</code> and <code>infinite_spindle_half</code>.</p>
 
 <h3>jsk_pcl/DepthImageCreator</h3>
 
@@ -731,7 +3126,7 @@ You can choose several types of tilt/spindle lasers such as tilt-laser of PR2, i
 
 <h3>jsk_pcl/EuclideanClustering</h3>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/euclidean_segmentation.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/euclidean_segmentation.png" alt=""></p>
 
 <h4>What Is This</h4>
 
@@ -798,7 +3193,7 @@ sensor_msgs/PointCloud2[] output
 </code></pre></div>
 <h3>jsk_pcl/ClusterPointIndicesDecomposer</h3>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/bounding_box.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/bounding_box.png" alt=""></p>
 
 <h4>What is this</h4>
 
@@ -897,13 +3292,13 @@ It also publishes tf of centroids of each cluster and oriented bounding box of t
 
 <h4>What Is This</h4>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/organized_multi_plane_segmentation.png" alt="images/organized_multi_plane_segmentation.png"></p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/organized_multi_plane_segmentation.png" alt="images/organized_multi_plane_segmentation.png"></p>
 
 <p>This nodelet segments multiple planes from <strong>organized</strong> pointcloud.
 It estimates planes based on <a href="http://en.wikipedia.org/wiki/Connected-component_labeling">connected-component analysis</a>
 using <code>pcl::OrganizedMultiPlaneSegmentation</code>.</p>
 
-<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/#&lt;Rugged::Branch:0x00000006d4bce0&gt;/jsk_pcl_ros//images/graph/organized_multi_plane_segmentation_overview.png" alt="overview"> shows the overview of the pipeline.</p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/graph/organized_multi_plane_segmentation_overview.png" alt="overview"> shows the overview of the pipeline.</p>
 
 <ol>
 <li>Estimate normal using integral image.</li>
@@ -1031,14 +3426,101 @@ Move the interactive marker and the snapped plane will follow the movement.</p>
 
 <h4>What Is This</h4>
 
-<p>This nodelet will snap the plane to the real world pointcloud.
-Move the interactive marker and the snapped plane will follow the movement.</p>
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/hinted_plane_detector.png" alt="">
+Estimate plane parameter from small 'hint' pointcloud and grow it to detect larger plane.</p>
 
-<h4>Sample</h4>
+<p>Algorithm is:</p>
 
-<p>Plug the depth sensor which can be launched by openni.launch and run the below command.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros hinted_plane_detector_sample.launch
-</code></pre></div>
+<ol>
+<li>Detect hint plane from small hint pointcloud using RANSAC</li>
+<li>Filter <code>~input</code> pointcloud based on distance and normal direction with hint plane.</li>
+<li>Detect plane from the pointcloud using RANSAC</li>
+<li>Segment clusters out of the inliers of the detected plane based on euclidean metrics</li>
+<li>Extract points from the nearest segmented clusters to the centroid of hint plane</li>
+<li>Compute convex hull of the extracted points</li>
+</ol>
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Input pointcloud. It is required to have normal and xyz fields.</p>
+
+<ul>
+<li>
+<code>~input/hint/cloud</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Hint pointcloud to estimate plane parameter and only xyz fieleds are required.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/polygon</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+<li>
+<code>~output/polygon_array</code> (<code>jsk_pcl_ros/PolygonArray</code>)</li>
+<li>
+<code>~output/inliers</code> (<code>pcl_msgs/PointIndices</code>)</li>
+<li>
+<code>~output/coefficients</code> (<code>pcl_msgs/ModelCoefficients</code>)</li>
+</ul>
+<p>Result of detection.</p>
+
+<ul>
+<li>
+<code>~output/hint/polygon</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+<li>
+<code>~output/hint/polygon_array</code> (<code>jsk_pcl_ros/PolygonArray</code>)</li>
+<li>
+<code>~output/hint/inliers</code> (<code>pcl_msgs/PointIndices</code>)</li>
+<li>
+<code>~output/hint/coefficients</code> (<code>pcl_msgs/ModelCoefficients</code>)</li>
+</ul>
+<p>Result of detection of hint pointcloud.
+* <code>~output/polygon_before_filtering</code> (<code>geometry_msgs/PolygonStamped</code>)
+* <code>~output/polygon_array_before_filtering</code> (<code>jsk_pcl_ros/PolygonArray</code>)</p>
+
+<p>Result of detection before euclidean filtering.
+* <code>~output/candidate_inliers</code> (<code>pcl_msgs/PointIndices</code>)</p>
+
+<p>Candidate point indices filtered by hint plane information.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li><code>~hint_outlier_threshold</code></li>
+</ul>
+<p>Outlier threshold to detect hint plane using RANSAC
+* <code>~hint_max_iteration</code></p>
+
+<p>Maximum iteration number to detect hint plane using RANSAC
+* <code>~hint_min_size</code></p>
+
+<p>Minimum number of inliers in hint plane
+* <code>~outlier_threashold</code></p>
+
+<p>Outlier threshold to detect larger plane using RANSAC
+* <code>~max_iteration</code></p>
+
+<p>Maximum iteration number to detect larger plane using RANSAC
+* <code>~min_size</code></p>
+
+<p>Minimum number of inliers in larger plane
+* <code>~eps_angle</code></p>
+
+<p>EPS angle to detect larger plane and normal direction is computed from hint plane.
+* <code>~normal_filter_eps_angle</code></p>
+
+<p>EPS angle to filter candidate points before detecting larger plane.
+  Normal direction is computed from hint plane.
+* <code>~euclidean_clustering_filter_tolerance</code></p>
+
+<p>Tolerance distance in euclidean clustering to filter far points.
+* <code>~euclidean_clustering_filter_min_size</code></p>
+
+<p>Minimum cluster size in euclidean clustering to filter far points.</p>
+
 <h3>jsk_pcl/OctreeChangeDetector</h3>
 
 <h4>What Is This</h4>
@@ -1053,10 +3535,6 @@ Move the interactive marker and the snapped plane will follow the movement.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros octree_change_detector.launch
 </code></pre></div>
 <h4>Speed</h4>
-
-<h3>jsk_pcl/ROIClipper</h3>
-
-<h4>What Is This</h4>
 
 <h3>jsk_pcl/TfTransformCloud</h3>
 
@@ -1108,37 +3586,2317 @@ you have to replace the nodelet manager name when use in groovy as below.</p>
 </code></pre></div>
 </div></body></html>
 
-            </div>
-          </div>
         
       </div>
-    
-      <div class="distro distro-fuerte">
-        
-        <em>No branch for distro <strong>fuerte</strong>. Known supported distros are highlighted in the buttons above.</em>
-        
-      </div>
-    
-      <div class="distro distro-electric">
-        
-        <em>No branch for distro <strong>electric</strong>. Known supported distros are highlighted in the buttons above.</em>
-        
-      </div>
-    
-      <div class="distro distro-diamondback">
-        
-        <em>No branch for distro <strong>diamondback</strong>. Known supported distros are highlighted in the buttons above.</em>
-        
-      </div>
-    
-      <div class="distro distro-c-turtle">
-        
-        <em>No branch for distro <strong>c-turtle</strong>. Known supported distros are highlighted in the buttons above.</em>
-        
-      </div>
-    
+    </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-list"></span> CHANGELOG</div>
+      <div class="panel-body">
+        
+          <em>No CHANGELOG found.</em>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+
+  <div class="distro distro-groovy">
+    <div class="container-fluid">
+      
+        
+        
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h3 class="panel-title">Package Summary</h3></div>
+      <div class="panel-body">
+        jsk_pcl_ros
+      </div>
+      <div class="panel-heading"><h3 class="panel-title">Status</h3></div>
+      <div class="panel-body" style="overflow-x: auto">
+        <table class="table table-condensed">
+          <tr>
+            <td class="text-right"><b>Source URI</b></td>
+            <td width="100%"><a class="label label-default" href="https://github.com/jsk-ros-pkg/jsk_recognition.git">https://github.com/jsk-ros-pkg/jsk_recognition.git</a></td>
+          </tr>
+          <tr>
+            <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+            <td>
+              
+                <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2015-01-19
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Build Type</b></td>
+            <td>
+              
+                <span class="label label-info">
+              
+              CATKIN</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Released</b></td>
+            <td>
+              
+                <span class="label label-primary"><span class="glyphicon glyphicon-flash"></span> RELEASED
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Dev Status</b></td>
+            <td>
+              
+                
+                  <span class="label label-primary">
+                
+                MAINTAINED
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="panel-heading"><h3 class="panel-title">Tags</h3></div>
+      <div class="panel-body">
+        
+        
+          <em>No tags defined.</em>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4 class="panel-title">Details</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          <li><strong>Version:</strong> 0.1.32</li>
+          <li><strong>License:</strong> BSD</li>
+        </ul>
+      </div>
+      <div class="panel-heading"><h4 class="panel-title">Maintainers</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          
+            <li>Youhei Kakiuchi</li>
+          
+        </ul>
+      </div>
+      <div class="panel-heading"><h4 class="panel-title">Authors</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          
+            <li>Yohei Kakiuchi</li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-file"></span> README</div>
+      <div class="panel-body">
+        
+          <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><div class="rendered-markdown">
+<h1>jsk_pcl_ros</h1>
+
+<h2>Introduction</h2>
+
+<p>jsk_pcl_ros is a package to provide some programs using <a href="http://pointclouds.org">pcl</a>.</p>
+
+<p>This package provides some programs as nodelet.</p>
+
+<h2>types</h2>
+
+<p>jsk_pcl_ros provides several message types.</p>
+
+<h3>ClusterPointIndices.msg</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Header header
+pcl_msgs/PointIndices[] cluster_indices
+</code></pre></div>
+<p>ClusterPointIndices is used to represent segmentation result.
+Simply put, ClusterPointIndices is a list of PointIndices.</p>
+
+<h3>ModelCoefficientsArray</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Header header
+pcl_msgs/ModelCoefficients[] coefficients
+</code></pre></div>
+<p>ModelCoefficientsArray is used to represent coefficients of model
+for each segmented clusters.
+Simply put, ModelCoefficientsArray is a list of ModelCoefficients.</p>
+
+<h3>PolygonArray</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Header header
+geometry_msgs/PolygonStamped[] polygons
+</code></pre></div>
+<p>PolygonArray is a list of PolygonStamped.</p>
+
+<p>You can use <a href="https://github.com/jsk-ros-pkg/jsk_visualization">jsk_rviz_plugins</a> to visualize PolygonArray in rviz.</p>
+
+<h3>BoundingBox</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Header header
+geometry_msgs/Pose pose
+geometry_msgs/Vector3 dimensions #x, y and z
+</code></pre></div>
+<p>BoundingBox represent a oriented bounding box. <code>dimensions</code> mean the
+size of bounding box.</p>
+
+<h3>BoundingBoxArray</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Header header
+BoundingBox[] boxes
+</code></pre></div>
+<p>BoundingBoxArray is a list of BoundingBox.
+You can use <a href="https://github.com/jsk-ros-pkg/jsk_visualization">jsk_rviz_plugins</a> to visualize BoungingBoxArray in rviz.</p>
+
+<h3>TimeRange</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Header header
+time start
+time end
+</code></pre></div>
+<p>Represent range of time.</p>
+
+<h2>nodelets</h2>
+
+<h3>jsk_pcl/PolygonToMaskImage</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/polygon_to_mask_image.png" alt=""></p>
+
+<p>Convert polygon into mask image.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+</ul>
+<p>Input 3-D polygon.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Input camera info to project 3-D polygon.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Mask image to fill <code>~input</code> polygon. Currently only convex polygon is supported.</p>
+
+<h3>jsk_pcl/MaskImageFilter</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/mask_image_filter.png" alt=""></p>
+
+<p>Extract indices of pointcloud which is masked by mask image. The pointcloud is no need to be organized.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input point cloud.
+* <code>~input/mask</code> (<code>sensor_msgs/Image</code>)</p>
+
+<p>Mask image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Camera parameters of the image.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Indices of the points masked by <code>~input/mask</code>.</p>
+
+<h3>jsk_pcl/ROIToRect</h3>
+
+<p>Convert camera info with ROI to <code>geometry_msgs/PolygonStamped</code>.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Input camera info with ROI filled.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+</ul>
+<p>Output rectangle region.</p>
+
+<h3>jsk_pcl/ROIToMaskImage</h3>
+
+<p>Convert camera info with ROI to mask image.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Input camera info with ROI filled.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Output mask image.</p>
+
+<h3>jsk_pcl/MaskImageToROI</h3>
+
+<p>Convert a mask image into camera info with roi.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Input mask image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Original camera info.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Camera info with ROI field filled.</p>
+
+<h3>jsk_pcl/MaskImageToRect</h3>
+
+<p>Convert a mask image into geometry_msgs::PolygonStamped.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Input mask image.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+</ul>
+<p>PolygonStamped message which only contains two points. Minimum point and Maximum point to represent bounding box in image.</p>
+
+<h3>jsk_pcl/MaskImageToRect</h3>
+
+<h3>jsk_pcl/TorusFInder</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/torus_finder.png" alt=""></p>
+
+<p>Find a torus out of pointcloud based on RANSAC with 3-D circle model.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Input pointcloud. You may need to choose good candidates of pointcloud.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>jsk_pcl_ros/Torus</code>)</li>
+</ul>
+<p>Output of detection.</p>
+
+<ul>
+<li>
+<code>~output/inliers</code> (<code>pcl_msgs/PointIndices</code>)</li>
+<li>
+<code>~output/coefficients</code> (<code>pcl_msgs/ModelCoefficients</code>)</li>
+</ul>
+<p>Inliers and coefficients which represents detection result.
+* <code>~output/array</code> (<code>jsk_pcl_ros/TorusArray</code>)</p>
+
+<p>Array of torus. It will be used for visualization.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~min_radius</code> (Double, default: <code>0.1</code>)</li>
+<li>
+<code>~max_radius</code> (Double, default: <code>1.0</code>)</li>
+</ul>
+<p>Minimum and maximum radius of torus.
+* <code>~min_size</code> (Integer, default: <code>10</code>)</p>
+
+<p>Minimum number of inliers.
+* <code>~outlier_threshold</code> (Double, default: <code>0.01</code>)</p>
+
+<p>Outlier threshold used in RANSAC.
+* <code>~max_iterations</code> (Integer, default: <code>100</code>)</p>
+
+<p>Maximum number of iterations of RANSAC.</p>
+
+<h3>jsk_pcl/RectToROI</h3>
+
+<p>Convert rectangle (<code>geometry_msgs/Polygon</code>) into ROI with camera info (<code>sensor_msgs/CameraInfo</code>).</p>
+
+<p>We expect it will be used with image_view2.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>geometry_msgs/Polygon</code>)</li>
+</ul>
+<p>Polygon to represent rectangle region of image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Original camera info.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>camera info with ROI filled by <code>~input</code>.</p>
+
+<h3>jsk_pcl/RectToMaskImage</h3>
+
+<p>Convert rectangle (<code>geometry_msgs/Polygon</code>) into mask image (<code>sensor_msgs/Image</code>)</p>
+
+<p>We expect it will be used with image_view2.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>geometry_msgs/Polygon</code>)</li>
+</ul>
+<p>Polygon to represent rectangle region of image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Original camera info.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Mask image.</p>
+
+<h3>jsk_pcl/AddColorFromImage</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/add_color_from_image" alt=""></p>
+
+<p>Add color to pointcloud (no need to be organized) from image and camera info.</p>
+
+<h3>Subscribing Topic</h3>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Input point cloud to add color. No need to be an organized pointcloud.
+* <code>~input/image</code> (<code>sensor_msgs/Image</code>)</p>
+
+<p>BGR8 color image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Camera parameters of <code>~input/image</code></p>
+
+<h3>Publishing Topic</h3>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Output colored pointcloud.</p>
+
+<h3>jsk_pcl/PlaneConcatenator</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//image/plane_concatenator.png" alt=""></p>
+
+<p>Concatenate near planes and build new set of planes.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud.
+* <code>~input/indices</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>)
+* <code>~input/polygons</code> (<code>jsk_pcl_ros/PolygonArray</code>)
+* <code>~input/coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>)
+  Input planes.</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output/indices</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>)</li>
+<li>
+<code>~output/polygons</code> (<code>jsk_pcl_ros/PolygonArray</code>)</li>
+<li>
+<code>~output/coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>)
+Concatenated planes. Coefficients parameters are refined by RANSAC.</li>
+</ul>
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~connect_angular_threshold</code> (Double, default: <code>0.1</code>)</li>
+</ul>
+<p>Angular threshold to regard two planes as near.
+* <code>~connect_distance_threshold</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Euclidean distance threshold to regard two planes as near.
+* <code>~ransac_refinement_max_iteration</code> (Integer, default: <code>100</code>)</p>
+
+<p>The maximum number of iteration of RANSAC refinement.
+* <code>~ransac_refinement_outlier_threshold</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Outlier threshold of RANSAC refinmenet.
+* <code>~ransac_refinement_eps_angle</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Eps angle threshold of RANSAC refinment using normal direction of the plane.</p>
+
+<h3>jsk_pcl/SupervoxelSegmentation</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/supervoxel_segmentation.png" alt=""></p>
+
+<p>Segment pointcloud based on Supervoxel technique.
+see Voxel Cloud Connectivity Segmentation - Supervoxels for Point Clouds (J. Papon et al. CVPR2013).</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud. It should have rgb field.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Output pointcloud downsampled by voxel grid.</p>
+
+<ul>
+<li>
+<code>~output/indices</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>)</li>
+</ul>
+<p>Clustering result.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~color_importance</code> (<code>Double</code>, default: <code>0.2</code>)</li>
+</ul>
+<p>Color importance factor.
+* <code>~spatial_importance</code> (<code>Double</code>, default: <code>0.4</code>)</p>
+
+<p>Spatial importance factor.
+* <code>~normal_importance</code> (<code>Double</code>, default: <code>1.0</code>)</p>
+
+<p>Normal importance factor.
+* <code>~use_transform</code> (<code>Boolean</code>, default: <code>True</code>)</p>
+
+<p>Use single cloud transform
+* <code>~seed_resolution</code> (<code>Double</code>, default: <code>0.1</code>)</p>
+
+<p>Seed resolution of super voxels.
+* <code>~voxel_resolution</code> (<code>Double</code>, default: <code>0.008</code>)</p>
+
+<p>Voxel grid resolution of super voxels.</p>
+
+<h3>jsk_pcl/IncrementalModelRegistration</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/incremental_model_registration.png" alt=""></p>
+
+<p>Build a full-model from sequential captured data.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud. RGB field is required.
+* <code>~input/pose</code> (<code>geometry_msgs/PoseStamped</code>)</p>
+
+<p>Initial pose to estimate acculate pose of the pointcloud.
+* <code>~input/indices</code> (<code>pcl_msgs/PointIndices</code>)</p>
+
+<p>Indices to mask object in <code>~input</code> pointcloud.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/non_registered</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Pointcloud just concatenated according to <code>~input/pose</code></p>
+
+<ul>
+<li>
+<code>~output/registered</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Pointcloud refined by ICP.</p>
+
+<h4>Using Services</h4>
+
+<ul>
+<li>
+<code>~icp_service</code> (<code>jsk_pcl_ros/ICPAlign</code>)</li>
+</ul>
+<p>ICP service interface to refine model.</p>
+
+<h3>jsk_pcl/IntermittentImageAnnotator</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/intermittent_image_annotator.png" alt=""><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/intermittent_image_annotator_pointcloud_clip.png" alt=""></p>
+
+<ol>
+<li>Store images when <code>~shutter</code> service is called</li>
+<li>Publish snapshots as one concatenated image</li>
+<li>Subscribe <code>~output/screenrectangle</code> to get ROI.</li>
+<li>Publish ROI information to <code>~output</code> namespace.</li>
+<li>Publish pointcloud inside of the ROI to <code>~output/cloud</code> if <code>~store_pointcloud</code> is set</li>
+</ol>
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input/image</code> and <code>~input/camera_info</code> (<code>sensor_msgs/Image</code> and <code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Input image and camera info.</p>
+
+<ul>
+<li>
+<code>~input/cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud to be clipped by specified ROI.</p>
+
+<ul>
+<li>
+<code>~output/screenrectangle</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+</ul>
+<p>ROI. We expect to use <a href="https://github.com/jsk-ros-pkg/jsk_common/tree/master/jsk_ros_patch/image_view2">image_view2</a>.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Snapshots as one concatenated image.</p>
+
+<ul>
+<li>
+<code>~output/direction</code> (<code>geometry_msgs/PoseStamped</code>)</li>
+</ul>
+<p>Direction of ROI as <code>PoseStamped</code>. z-axis directs the center of ROI.</p>
+
+<ul>
+<li>
+<code>~output/roi</code> (<code>jsk_pcl_ros/PosedCameraInfo</code>)</li>
+</ul>
+<p>Publish ROI of specified region as <code>PosedCameraInfo</code>.</p>
+
+<ul>
+<li>
+<code>~output/cloud</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Pointcloud inside of ROI. pointcloud is stored when <code>~shutter</code> service is called and
+  its timestamp will be updated according to the latest image.</p>
+
+<ul>
+<li>
+<code>~output/marker</code> (<code>visualization_msgs/Marker</code>)</li>
+</ul>
+<p>Marker to visualize ROI (<code>~output/roi</code>).</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~fixed_frame_id</code> (<code>String</code>, default: <code>odom</code>)</li>
+</ul>
+<p>Fixed frame id to resolve tf.</p>
+
+<ul>
+<li>
+<code>~max_image_buffer</code> (<code>Integer</code>, default: <code>5</code>)</li>
+</ul>
+<p>The maximum number of images to store in this nodelet.</p>
+
+<ul>
+<li>
+<code>~store_pointcloud</code> (<code>Boolean</code>, default: <code>false</code>)</li>
+</ul>
+<p>Store pointcloud if it's true</p>
+
+<ul>
+<li>
+<code>~keep_organized</code> (<code>Boolean</code>, default: <code>false</code>)</li>
+</ul>
+<p>Keep pointcloud organized after clipping by specified ROI.</p>
+
+<h4>Advertising Service</h4>
+
+<ul>
+<li>
+<code>~shutter</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Take a snapshot</p>
+
+<ul>
+<li>
+<code>~clear</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Clear images stored in the nodelet.</p>
+
+<h3>jsk_pcl/LINEMODDetector</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/linemod_detector.png" alt=""></p>
+
+<p>A nodelet to detect object using LINEMOD.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Input pointcloud.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Result of detection as pointcloud.</p>
+
+<ul>
+<li>
+<code>~output/mask</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Result of detection as mask image.</p>
+
+<ul>
+<li>
+<code>~output/pose</code> (<code>geometry_msgs/PoseStamped</code>)</li>
+</ul>
+<p>Pose of detected template</p>
+
+<ul>
+<li>
+<code>~output/template</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Template pointcloud at identity pose.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~template_file</code> (<code>String</code>, default: <code>template</code>)</li>
+</ul>
+<p>Template file
+* <code>~gradient_magnitude_threshold</code> (<code>Double</code>, default: <code>10.0</code>)</p>
+
+<p>Gradient maginutude threshold</p>
+
+<ul>
+<li>
+<code>~detection_threshold</code> (<code>Double</code>, default: <code>0.75</code>)</li>
+</ul>
+<p>Detection threshold</p>
+
+<h3>jsk_pcl/LINEMODTrainer</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/linemod_trainer.png" alt=""></p>
+
+<p>A nodelet to train LINEMOD data from pointcloud and indices to mask the objects.
+This nodelet stores data of pointcloud and if you call <code>~start_training</code> service,
+it will train the data and dump the templates into lmt file.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>This pointcloud should be able to be converted into <code>pcl::PointXYZRGBA</code> data.
+* <code>~input/indices</code> (<code>pcl_msgs/PointIndices</code>)</p>
+
+<p>Indices to mask object in <code>~input</code> pointcloud.</p>
+
+<ul>
+<li>
+<code>~input/info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Camera parameter to sample viewpoint.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/range_image</code> (<code>sensor_msgs/Image</code>)</li>
+<li>
+<code>~output/colored_range_image</code> (<code>sensor_msgs/Image</code>)</li>
+<li>
+<code>~output/sample_cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Image and pointcloud generated by viewpoint sampling.</p>
+
+<h4>Advertising Servicies</h4>
+
+<ul>
+<li>
+<code>~start_training</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Start training and dump result into a file.</p>
+
+<ul>
+<li>
+<code>~clear_data</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Clear stored data.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~output_file</code> (<code>String</code>, default: <code>template</code>)</li>
+</ul>
+<p>A file path to dump trained data.</p>
+
+<ul>
+<li>
+<code>~sample_viewpoint</code> (<code>Bool</code>, default: <code>True</code>)</li>
+</ul>
+<p>Generate training data by samplingenerating viewpoint if this parameter is set to true.</p>
+
+<ul>
+<li>
+<code>~sample_viewpoint_angle_step</code> (<code>Double</code>, default: <code>40.0</code>)</li>
+<li>
+<code>~sample_viewpoint_angle_min</code> (<code>Double</code>, default: <code>-80.0</code>)</li>
+<li>
+<code>~sample_viewpoint_angle_max</code> (<code>Double</code>, default: <code>80.0</code>)</li>
+<li>
+<code>~sample_viewpoint_radius_step</code> (<code>Double</code>, default: <code>0.2</code>)</li>
+<li>
+<code>~sample_viewpoint_radius_min</code> (<code>Double</code>, default: <code>0.4</code>)</li>
+<li>
+<code>~sample_viewpoint_radius_max</code> (<code>Double</code>, default: <code>0.8</code>)</li>
+</ul>
+<p>Viewpoint sampling parameters. Pose of model is sampled by golden ratio spatial technique.</p>
+
+<h3>jsk_pcl/CaptureStereoSynchronizer</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/capture_stereo_synchronizer.png" alt=""></p>
+
+<p>A nodelet to capture training data of stereo cameras. It subscribe several messages with
+synchronizing timestamp and republish them into <code>~output</code> namespace.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input/pose</code> (<code>geometry_msgs/PoseStamped</code>)</li>
+</ul>
+<p>Pose of checkerboard</p>
+
+<ul>
+<li>
+<code>~input/mask</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Mask image of the object</p>
+
+<ul>
+<li>
+<code>~input/mask_indices</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Pointcloud indices of the object</p>
+
+<ul>
+<li>
+<code>~input/left_image</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Left camera image</p>
+
+<ul>
+<li>
+<code>~input/left_camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Left camera parameter</p>
+
+<ul>
+<li>
+<code>~input/right_camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Right camera parameter</p>
+
+<ul>
+<li>
+<code>~input/disparity</code> (<code>stereo_msgs/Disparity</code>)</li>
+</ul>
+<p>Disparity image of the stereo camear.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/pose</code> (<code>geometry_msgs/PoseStamped</code>)</li>
+<li>
+<code>~output/mask</code> (<code>sensor_msgs/Image</code>)</li>
+<li>
+<code>~output/mask_indices</code> (<code>pcl_msgs/PointIndices</code>)</li>
+<li>
+<code>~output/left_image</code> (<code>sensor_msgs/Image</code>)</li>
+<li>
+<code>~output/left_camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+<li>
+<code>~output/right_camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+<li>
+<code>~output/disparity</code> (<code>stereo_msgs/Disparity</code>)</li>
+</ul>
+<p>These topics are the same message to the <code>~input/foo</code> messages but all of them
+  are republished only if input messages are synchronized.</p>
+
+<h4>Sample</h4>
+
+<p>Please check <a href="launch/capture_multisense_training_data.launch">capture_multisense_training_data.launch</a>.</p>
+
+<h3>jsk_pcl/MaskImageToPointIndices</h3>
+
+<p>A nodelet to convert mask image (<code>sensor_msgs::Image</code>) to <code>pcl_msgs/PointIndices</code> for
+organized pointcloud.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Input mask image.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Output indices converted from the mask image.</p>
+
+<h3>jsk_pcl/PointIndicesToMaskImage</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/point_indices_to_mask_image.png" alt=""></p>
+
+<p>jsk_pcl/PointIndicesToMaskImage generates mask image from <code>pcl_msgs/PointIndices</code>
+of organized pointcloud and original <code>sensor_msgs/Image</code>.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Indices of the point cloud to mask.</p>
+
+<ul>
+<li>
+<code>~input/image</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>In order to know width and height of the original image, jsk_pcl/PointIndicesToMaskImage requires
+   input image.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code>(<code>sensor_msg/Image</code>)</li>
+</ul>
+<p>Mask image to get <code>~input</code> indices from the origina limage.</p>
+
+<h3>jsk_pcl/AttentionClipper</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/attention_clipper.png" alt=""></p>
+
+<p>It retrives <code>sensor_msgs/CameraInfo</code> and publish <code>sensor_msgs/CameraInfo</code> with ROI filled and
+retirieves <code>sensor_msgs/PointCloud2</code> and publish <code>pcl_msgs/PointIndices</code>.</p>
+
+<p>You can specify the pose and size of the interest bounding box and jsk_pcl/AttentionClipper returns ROI
+to see the object.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>Original camera info.</p>
+
+<ul>
+<li>
+<code>~input/points</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>Original pointcloud.
+* <code>~input/pose</code> (<code>geometry_msgs/PoseStamped</code>)
+* <code>~input/box</code> (<code>jsk_pcl_ros/BoundingBox</code>)
+  Specify the pose of the bounding box. Timestamp will be ignored and camera info's timestamp will be used. If you use <code>~input/box</code>, you can change the size of attention region. There callbacks are only enabled if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~input/pose_array</code> (<code>geometry_msgs/PoseArray</code>)</li>
+<li>
+<code>~input/box_array</code> (<code>jsk_pcl_ros/BoundingBoxArray</code>)
+It's an array version of <code>~input/pose</code> and <code>~input/box</code>. There callbacks are only enabled if <code>~use_multiple_attention</code> is true.
+#### Publishing Topic</li>
+<li>
+<code>~output</code> (<code>sensor_msgs/CameraInfo</code>)</li>
+</ul>
+<p>This camera info is same with <code>~input</code> except for roi field.</p>
+
+<ul>
+<li>
+<code>~output/mask</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Mask image to mask the regions of specified interest.</p>
+
+<ul>
+<li>
+<code>~output/point_indices</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>Indices of <code>~input/points</code> which are inside of interest regions.</p>
+
+<h4>Parameter</h4>
+
+<ul>
+<li>
+<code>~use_multiple_attention</code> (Boolean, default: <code>False</code>)</li>
+</ul>
+<p>If you want to enable multiple attentions, please set this variable True.</p>
+
+<ul>
+<li>
+<code>~dimension_x</code> (Double, default: <code>0.1</code>)</li>
+<li>
+<code>~dimension_y</code> (Double, default: <code>0.1</code>)</li>
+<li>
+<code>~dimension_z</code> (Double, default: <code>0.1</code>)</li>
+</ul>
+<p>Size of bounding box. Available only if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~frame_id</code> (String, default: <code>base_link</code>)</li>
+</ul>
+<p>Frame id of attention region. Available only if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~initial_pos</code> (Array of double, default: <code>None</code>):</li>
+</ul>
+<p>Initial pose of interesting region. Available only if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~initial_rot</code> (Array of double, default: <code>None</code>):</li>
+</ul>
+<p>Initial orientation of interesting region. The value should be represented in
+  [roll, pitch, yaw]. Available only if <code>~use_multiple_attention</code> is false.</p>
+
+<ul>
+<li>
+<code>~initial_pos_list</code> (Array of array of double, default: <code>None</code>)</li>
+<li>
+<code>~initial_rot_list</code> (Array of array of double, default: <code>None</code>)</li>
+<li>
+<code>~frame_id_list</code> (Array of string, default: <code>None</code>)</li>
+<li>
+<code>~dimensions</code> (Array of array of double, default: <code>None</code>)</li>
+</ul>
+<p>Position, Rotation, frame id and Dimensions of multiple attention regions respectively.
+  <code>~iniital_pos_list</code> should follow <code>[[x, y, z], ...]</code>,
+  <code>~initial_rot_list</code> should follow <code>[[rx, ry, rz], ...]</code> and
+  <code>~dimensions</code> should follow <code>[[x, y, z], ...]</code>.
+  Available only if <code>~use_multiple_attention</code> is true.</p>
+
+<h3>jsk_pcl/ROIClipper</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/attention_clipper.png" alt=""></p>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/roi_clipper_pointcloud.png" alt=""></p>
+
+<p>It retrives <code>sensor_msgs/Image</code> and <code>sensor_msgs/CameraInfo</code> and publish <code>sensor_msgs/Image</code> of ROI.
+It is similar to <code>image_proc/crop_decimate</code> but you can use <code>CameraInfo/roi</code> field to specify ROI.</p>
+
+<p>We expect to use jsk_pcl/ROIClipper with jsk_pcl/AttentionClipper to get ROI image.</p>
+
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input/image</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Input image.
+* <code>~input/camera_info</code> (<code>sensor_msgs/CameraInfo</code>)</p>
+
+<p>Camera parameter and ROI field should be filled.</p>
+
+<p>These two topic should be synchronized if <code>~not_sync</code> is not false.</p>
+
+<ul>
+<li>
+<code>~input/cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>This topic is only enabled if <code>~not_sync</code> is true.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>)</li>
+</ul>
+<p>Image of ROI.</p>
+
+<ul>
+<li>
+<code>~output/point_indices</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>The indices of the pointcloud which is inside of the interest 3-D region.</p>
+
+<ul>
+<li>
+<code>~output/cloud</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>PointCloud clipped from <code>~input/cloud</code> and <code>~input/camera_info</code>.</p>
+
+<h4>Parameter</h4>
+
+<ul>
+<li>
+<code>~not_sync</code> (Bool, default: <code>False</code>)</li>
+</ul>
+<p>If ~not_sync is true, do not need to synchronize camera info and other input topics, and
+  pointcloud clipping is enabled.</p>
+
+<h3>jsk_pcl/NormalDirectionFilter</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/normal_direction_filter.png" alt="NormalDirectionFilter"></p>
+
+<p>jsk_pcl/NormalDirectionFilter filters pointcloud based on the direction of the normal.
+It can filters pointcloud based on <strong>static</strong> direction and direction based on imu linear_acceleration.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>)</li>
+</ul>
+<p>input normal pointcloud.
+* <code>~input_imu</code> (<code>sensor_msgs/Imu</code>)</p>
+
+<p>imu message, which is enabled if <code>~use_imu</code> parameter is true</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>pcl_msgs/PointIndices</code>)</li>
+</ul>
+<p>result of filtering as indices. You can use <code>pcl/ExtractIndices</code> to get pointcloud of the indices.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~use_imu</code> (Boolean, default: <code>False</code>):</li>
+</ul>
+<p>Enable <code>~input_imu</code> topic and set target direction based on imu linear acceleration.
+* <code>~eps_angle</code> (Double, default: <code>0.2</code>):</p>
+
+<p>Eps angle difference to regard the normal as required direction.
+* <code>~angle_offset</code> (Double, default: <code>0.0</code>):</p>
+
+<p>Offset parameter to the direction.
+* <code>~direction</code> (Double Array, required):</p>
+
+<p>if <code>~use_imu</code> is false, the direction should be specified with this parmaeter.</p>
+
+<h3>jsk_pcl/MultiPlaneExtraction</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/multi_plane_extraction.png" alt="MultiPlaneExtraction"></p>
+
+<p>Extract the points above the planes between <code>~min_height</code> and <code>~max_height</code>.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Input pointcloud.
+* <code>~indices</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>)
+* <code>~input_polygons</code> (<code>jsk_pcl_ros/PolygonArray</code>)
+* <code>~input_coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>):</p>
+
+<p>The input planes. If <code>~use_indices</code> parameter is false, <code>~indices</code> will not be used.</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Pointcloud above the planes between <code>~min_height</code> and <code>~max_height</code>.
+* <code>~output_nonplane_cloud</code> (<code>sensor_msgs/PointCloud2</code>):</p>
+
+<p>Pointcloud above the planes is not between <code>~min_height</code> and <code>~max_height</code>.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~min_height</code> (Double, default: <code>0.0</code>)</li>
+<li>
+<code>~max_height</code>(Double, default: <code>0.5</code>)</li>
+</ul>
+<p>Minimum and maximum height of 3-D polygonal region to extract points.
+* <code>~max_queue_size</code> (Integer, default: <code>100</code>)</p>
+
+<p>Queue length for subscribing topics.</p>
+
+<ul>
+<li>
+<code>~use_indices</code> (Bool, default: <code>True</code>)</li>
+</ul>
+<p>Use indices of planar regions to filter if it's set true.
+   You can disable this parameter to filter pointcloud which is not the same pointcloud
+   to segment planes</p>
+
+<h3>jsk_pcl/RegionGrowingMultiplePlaneSegmentation</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/region_growing_multiple_plane_segmentation.png" alt="jsk_pcl/RegionGrowingMultiplePlaneSegmentation">.</p>
+
+<p>jsk_pcl/RegionGrowingMultiplePlaneSegmentation estimates multiple plenes from pointcloud.</p>
+
+<p>It extracts planes based on <a href="http://en.wikipedia.org/wiki/Region_growing">region growing</a>
+and evaluation function of connectivity if based on the following equation:
+<img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/region_growing_multiple_plane_segmentation_eq.gif" alt=""></p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>input pointcloud.
+* <code>~input_normal</code> (<code>sensor_msgs/PointCloud2</code>):</p>
+
+<p>normal pointcloud of <code>~input</code></p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output/inliers</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>):</li>
+</ul>
+<p>Set of indices of the polygons.
+* <code>~output/coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>):</p>
+
+<p>Array of coefficients of the polygons.
+* <code>~output/polygons</code> (<code>jsk_pcl_ros/PolygonArray</code>):</p>
+
+<p>Polygons</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~angular_threshold</code> (Double, default: <code>0.04</code>)</li>
+</ul>
+<p>Angular threshold to connect two points in one cluster. See
+* <code>~distance_threshold</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Distance threshold to connect two points in one cluster.
+* <code>~max_curvature</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Before extracting planes, filtering out the points which have higer curvature than this value.
+* <code>~min_size</code> (Integer, default: <code>100</code>)</p>
+
+<p>The minimum number of the points of each plane.
+* <code>~cluster_tolerance</code> (Double, default: <code>0.1</code>)</p>
+
+<p>The spatial tolerance for new cluster candidates.
+* <code>~ransac_refine_outlier_distance_threshold</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Outlier threshold for plane estimation using RANSAC.
+* <code>~ransac_refine_max_iterations</code> (Integer, default: <code>100</code>)</p>
+
+<p>The maximum number of the iterations for plane estimation using RANSAC.</p>
+
+<h3>jsk_pcl/ParticleFilterTracking</h3>
+
+<h4>What Is This</h4>
+
+<p>This nodelet will track the target pointcloud which you set in rviz.</p>
+
+<h4>Sample</h4>
+
+<p>run the below command.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros tracking_groovy.launch # (When use groovy)
+roslaunch jsk_pcl_ros tracking_hydro.launch  #(When use hydro)
+</code></pre></div>
+<p>Push the "Select" button at the top bar , drag and surround the target poincloud which you want to track in the rectangle area.Then, finally, push the "SelectPointCloudPublishActoin" button at SelectPointCloudPublishAction Panel. The tracker will start tracking the target.</p>
+
+<h3>jsk_pcl/ResizePointsPublisher</h3>
+
+<h4>What is this</h4>
+
+<p>ResizePointsPublisher resizes PointCloud generated from depth images. It keeps <em>organized</em> pointcloud. For example you can create QVGA pointcloud from VGA pointcloud of kinect like sensors.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Input PointCloud. The input should be organized pointcloud.</p>
+
+<h4>Publishing Topics.</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Output PointCloud. The output will be organized.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~step_x</code>, <code>~step_y</code> (Double, default: <code>2</code>):</li>
+</ul>
+<p>Bining step when resizing pointcloud.
+* <code>~not_use_rgb</code> (Boolean, default: <code>false</code>):</p>
+
+<p>If you want to resize pointcloud without RGB fields, you need to set this parameter to True.</p>
+
+<h3>jsk_pcl/PointcloudScreenpoint</h3>
+
+<h4>What is this</h4>
+
+<p>This is a nodelet to convert (u, v) coordinate on a image to 3-D point.
+It retrieves 3-D environment as pointcloud.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~points</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Input pointcloud to represent 3-D environment it should be organized.
+* <code>~point</code> (<code>geometry_msgs/PointStamped</code>):</p>
+
+<p>Input point to represent (u, v) image coordinate and this topic is enabled only if <code>~use_point</code> parameter is set <code>True</code>.
+   Only x and y fileds are used and the header frame_id is ignored.
+   If <code>~use_sync</code> parameter is set <code>True</code>, <code>~points</code> and <code>~point</code> are synchronized.</p>
+
+<ul>
+<li>
+<code>~polygon</code> (<code>geometry_msgs/PolygonStamped</code>):</li>
+</ul>
+<p>Input rectangular region on image local coordinates and this topic is enabled only if <code>~use_rect</code> parameter is set <code>True</code>.
+   Only x and y fields are used and the header frame_id is ignored.
+   And the region should be rectangular.
+   If <code>~use_sync</code> parameter is set <code>True</code>,</p>
+
+<ul>
+<li>
+<code>~point_array</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Input points to represent series of (u, v) image coordinate and this
+   topic is enabled only if <code>~use_point_array</code> parameter is set <code>True</code>.
+   Only x and y fields are used and the header frame_id is ignored.
+   If <code>~use_sync</code> parameter is set <code>True</code>, <code>~point_array</code> and <code>~point</code> are
+   synchronized.</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output_point</code> (<code>geometry_msgs/PointStamped</code>):</li>
+</ul>
+<p>The topic to be used to publish one point as a result of screenpoint.
+* <code>~output</code> (<code>sensor_msgs/PointCloud</code>):</p>
+
+<p>The topic to be used to publish series of points as a result of screenpoint.</p>
+
+<h4>Advertising Servicies</h4>
+
+<ul>
+<li>
+<code>~screen_to_point</code> (<code>jsk_pcl_ros::TransformScreenpoint</code>)</li>
+</ul>
+<p>ROS Service interface to convert (u, v) image coordinate into 3-D point.</p>
+
+<p>The definition of <code>jsk_pcl_ros::TransformScreenpoint</code> is:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"># screen point
+float32 x
+float32 y
+---
+# position in actual world
+std_msgs/Header header
+geometry_msgs/Point point
+geometry_msgs/Vector3 vector
+</code></pre></div>
+<p>With int this service, the latest pointcloud acquired by <code>~points</code> is used to convert (u, v) into 3-D point.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~use_sync</code> (Boolean, default: <code>False</code>):</li>
+</ul>
+<p>If this parameter is set to <code>True</code>, the timestamps of 3-D pointcloud and the target point/rectangle/point array are synchronized.
+* <code>~queue_size</code> (Integer, default: <code>1</code>):</p>
+
+<p>Queue length of subscribing topics.
+* <code>~crop_size</code> (Integer, default: <code>10</code>):</p>
+
+<p>The size of approximate region if <code>~points</code> pointcloud has nan holes.
+* <code>~use_rect</code> (Boolean, default: <code>False</code>):</p>
+
+<p>Enable <code>~polygon</code> topic.
+* <code>~use_point</code> (Boolean, default: <code>False</code>):</p>
+
+<p>Enable <code>~point</code> topic.
+* <code>~use_point_array</code> (Boolean, default: <code>False</code>):</p>
+
+<p>Enable <code>~point_array</code> topic.
+* <code>~publish_points</code> (Boolean, default: <code>False</code>):</p>
+
+<p>Publish result of screenpoint to <code>~output</code> topic.
+* <code>~publish_point</code> (Boolean, default: <code>False</code>):</p>
+
+<p>Publish result of screenpoint to <code>~output_point</code> topic.</p>
+
+<h3>jsk_pcl/TiltLaserListener</h3>
+
+<h4>What is this</h4>
+
+<p>Listen to the joint_states of tilt/spindle laser and publish time range to scane full 3-D space.
+You can choose several types of tilt/spindle lasers such as tilt-laser of PR2, infinite spindle laser of multisense.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code>(<code>sensor_msgs/JointState</code>):</li>
+</ul>
+<p>Joint angles of laser actuator.</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>jsk_pcl_ros/TimeRange</code>):</li>
+</ul>
+<p>Time range to scan 3-D space.
+* <code>~output_cloud</code> (<code>sensor_msgs/PointCloud2</code>):</p>
+
+<p>Assembled pointcloud according to time range
+   of <code>~output</code>. this require <code>~assemble_scans2</code>
+   service of <a href="http://wiki.ros.org/laser_assembler">laser_assembler</a>.</p>
+
+<h4>Using Services</h4>
+
+<ul>
+<li>
+<code>~assemble_scans2</code> (<code>laser_assembler/AssembleScans2</code>):</li>
+</ul>
+<p>A service to build 3-D pointcloud from scan pointcloud.
+   It should be remapped to <code>assemble_scans2</code> service of
+   <a href="http://wiki.ros.org/laser_assembler">laser_assembler</a>.</p>
+
+<h4>Advertising Service</h4>
+
+<ul>
+<li>
+<code>~clear_cache</code> (<code>std_srvs/Empty</code>)</li>
+</ul>
+<p>Clear cache and restart collecting data.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~use_laser_assembler</code> (Boolean, default: <code>False</code>):</li>
+</ul>
+<p>Enable <code>~output_cloud</code> and <code>~assemble_scans2</code>.
+* <code>~joint_name</code> (String, <strong>required</strong>):</p>
+
+<p>Joint name of actuator to rotate laser.
+* <code>~laser_type</code> (String, default: <code>tilt_half_down</code>):</p>
+
+<p>type of rotating laser. You can choose one of the types:
+   1. <code>tilt</code>: A mode for tilting laser. In this mode, TiltLaserListener assumes the motor to be moved from minimum
+   joint angle to maximum joint angle over again. TiltLaserListener publishes the minimum and latest time range to
+   move tilting laser from minimum joint angle to maximim joint angle.
+   2. <code>tilt_half_down</code>:
+   In this mode, TiltLaserListener publishes time range from maximum joint angle to minimum joint angle.
+   3. <code>tilt_half_up</code>:
+   In this mode, TiltLaserListener publishes time range from minimum joint angle to maximum joint angle like <code>tilt_half_down</code>.
+   4. <code>infinite_spindle</code>: Infinite spindle laser. TiltLaserListener publishes time range to rotate laser 360 degrees.
+   5. <code>infinite_spindle_half</code>: Infinite spindle laser, but most of laser has over 180 degrees range of field.
+   Therefore we don't need to rotate laser 360 degrees to scan 3-D space, just 180 degree rotation is required.
+   In this mode, TiltLaserListener publishes time range a time range of 180 degree rotation.
+* <code>~overwrap_angle</code> (Double, default: <code>0.0</code>)</p>
+
+<p>overwrap angle offset when detecting time range.
+   Only available in <code>infinite_spindle</code> and <code>infinite_spindle_half</code>.</p>
+
+<h3>jsk_pcl/DepthImageCreator</h3>
+
+<h4>What is this</h4>
+
+<p>Create <em>organized</em> pointcloud from non-organized pointcloud.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>The input pointcloud to be reconstructed as organized pointcloud.
+* <code>~info</code> (<code>sensor_msgs/CameraInfo</code>):</p>
+
+<p>Put a simulated camera according to <code>~info</code> and generate organized pointcloud.</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/Image</code>):</li>
+</ul>
+<p>Publish organized pointcloud as depth image.
+* <code>~output_cloud</code> (<code>sensor_msgs/PointCloud2</code>)</p>
+
+<p>organized pointcloud.
+* <code>~output_disp</code> (<code>sensor_msgs/DisparityImage</code>)</p>
+
+<p>Publish organized pointcloud as disparity image.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~scale_depth</code> (Double, default: <code>1.0</code>)</li>
+</ul>
+<p>scale depth value.
+* <code>~use_fixed_transform</code> (Boolean, default: <code>False</code>):
+* <code>~translation</code> (Array of double, default: <code>[0, 0, 0]</code>)
+* <code>~rotation</code> (Array of double, default: <code>[0, 0, 0, 1]</code>)</p>
+
+<p>If <code>~use_fixed_transform</code> is set to <code>True</code>,
+   transformation between <code>~input</code> and <code>~info</code> is not resolved via tf
+   but fixed transformation is used according to <code>~rotation</code> and <code>translation</code>.
+* <code>~use_asynchronous</code> (Boolean, default: <code>False</code>)</p>
+
+<p>Do not synchronize <code>~input</code> and <code>~info</code> if this parameter is set to <code>True</code>.
+* <code>~use_approximate</code> (Boolean, default: <code>False</code>)</p>
+
+<p>Synchronize <code>~input</code> and <code>~info</code> approximately if this parameter is set to <code>True</code>.
+* <code>~info_throttle</code> (Integer, default: <code>0</code>)</p>
+
+<p>The number of <code>~info</code> messages to skip to generate depth image.
+* <code>~max_queue_size</code> (integer, default: <code>3</code>):</p>
+
+<p>Queue length of topics.</p>
+
+<h3>jsk_pcl/EuclideanClustering</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/euclidean_segmentation.png" alt=""></p>
+
+<h4>What Is This</h4>
+
+<p>Segment pointcloud based euclidean metrics, which is based on <code>pcl::EuclideanClusterExtraction</code>.
+This nodelet has topic interface and service interface.</p>
+
+<p>The result of clustering is published as <code>jsk_pcl_ros/ClusterPointIndices</code>.</p>
+
+<p>If the number of the cluster is not changed across different frames, <code>EuclideanClustering</code>
+tries to track the segment.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>input pointcloud.</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>):</li>
+</ul>
+<p>Result of clustering.
+* <code>~cluster_num</code> (<code>jsk_pcl_ros/Int32Stamped</code>):</p>
+
+<p>The number of clusters.</p>
+
+<h4>Advertising Services</h4>
+
+<ul>
+<li>
+<code>~euclidean_clustering</code> (<code>jsk_pcl_ros/EuclideanSegment</code>):</li>
+</ul>
+<p>Service interface to segment clusters.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sensor_msgs/PointCloud2 input
+float32 tolerance
+---
+sensor_msgs/PointCloud2[] output
+</code></pre></div>
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~tolerance</code> (Double, default: <code>0.02</code>):</li>
+</ul>
+<p>Max distance for the points to be regarded as same cluster.
+* <code>~label_tracking_tolerance</code> (Double, default: <code>0.2</code>)</p>
+
+<p>Max distance to track the cluster between different frames.
+* <code>~max_size</code> (Integer, default: <code>25000</code>)</p>
+
+<p>The maximum number of the points of one cluster.
+* <code>~min_size</code> (Integer, default: <code>20</code>)</p>
+
+<p>The minimum number of the points of one cluster.</p>
+
+<h4>Sample</h4>
+
+<p>Plug the depth sensor which can be launched by openni.launch and run the below command.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros euclidean_segmentation.launch
+</code></pre></div>
+<h3>jsk_pcl/ClusterPointIndicesDecomposer</h3>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/bounding_box.png" alt=""></p>
+
+<h4>What is this</h4>
+
+<p>Decompose <code>jsk_pcl_ros/ClusterPointIndices</code> into array of topics of <code>sensor_msgs/PointCloud</code> like <code>~output00</code>, <code>~output01</code> and so on.
+It also publishes tf of centroids of each cluster and oriented bounding box of them. The direction of the bounding box are aligned on to the nearest planes if available.</p>
+
+<h4>Subscribing topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Input pointcloud.
+* <code>~target</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>):</p>
+
+<p>Input set of indices to represent clusters.
+* <code>~align_planes</code> (<code>jsk_pcl_ros/PolygonArray</code>):
+* <code>~align_planes_coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>):</p>
+
+<p>The planes for bounding box to be aligned on.</p>
+
+<h4>Publishing topics</h4>
+
+<ul>
+<li>
+<code>~output%02d</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Series of topics for each pointcloud cluster.
+* <code>~debug_output</code> (<code>sensor_msgs/PointCloud2</code>):</p>
+
+<p>Concatenate all the clusters into one pointcloud and colorize each cluster to see the result of segmentation.
+* <code>~boxes</code> (<code>jsk_pcl_ros/BoundingBoxArray</code>):</p>
+
+<p>Array of oriented bounding box for each segmented cluster.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~publish_tf</code> (Boolean, default: <code>True</code>):</li>
+</ul>
+<p>Toggle tf publishing.
+* <code>~publish_clouds</code> (Boolean, default: <code>True</code>):</p>
+
+<p>Toggle <code>~output%02d</code> topics.
+* <code>~align_boxes</code> (Boolean, default: <code>False</code>):</p>
+
+<p>If this parameter is set to <code>True</code>, <code>~align_planes</code> and
+   <code>~align_planes_coefficients</code> are enabled.
+* <code>~use_pca</code> (Boolean, default: <code>False</code>):</p>
+
+<p>Run PCA algorithm on each cluster to estimate x and y direction.</p>
+
+<h3>jsk_pcl/ClusterPointIndicesDecomposerZAxis</h3>
+
+<h4>What Is This</h4>
+
+<p>This nodelet is almost same to jsk_pcl/ClusterPointIndicesDecomposer, however it always sort clusters in z direction.</p>
+
+<h3>jsk_pcl/CentroidPublisher</h3>
+
+<h4>What Is This</h4>
+
+<p>This nodelet will subscribe the sensor_msgs::PointCloud2, calculate its centroid  and boardcast the tf whose parent is cloud headers frame_id and whose child is the new centroid frame_id.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>input pointcloud.</p>
+
+<h4>Publishing Topics</h4>
+
+<ul>
+<li>
+<code>/tf</code>:</li>
+</ul>
+<p>Publish tf of the centroid of the input pointcloud.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~frame</code> (String, required):</li>
+</ul>
+<p>frame_id of centroid tf</p>
+
+<h4>Sample</h4>
+
+<p>Plug the depth sensor which can be launched by openni.launch and run the below command.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros centroid_publisher.launch
+</code></pre></div>
+<h3>jsk_pcl/OrganizedMultiPlaneSegmentation</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/organized_multi_plane_segmentation.png" alt="images/organized_multi_plane_segmentation.png"></p>
+
+<p>This nodelet segments multiple planes from <strong>organized</strong> pointcloud.
+It estimates planes based on <a href="http://en.wikipedia.org/wiki/Connected-component_labeling">connected-component analysis</a>
+using <code>pcl::OrganizedMultiPlaneSegmentation</code>.</p>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/graph/organized_multi_plane_segmentation_overview.png" alt="overview"> shows the overview of the pipeline.</p>
+
+<ol>
+<li>Estimate normal using integral image.</li>
+<li>Conduct connected component analysis to estimate planar regions.</li>
+<li>Connect neighbor planes if the normal directions and the borders of the planes are near enough.</li>
+<li>Refine plane coefficients of connected planes based on RANSAC. If the areas of the planes after refinement are too small, they will be removed.</li>
+</ol>
+<p>These process is implemented in one nodelet in order not to convert pointcloud between
+PCL and ROS.</p>
+
+<h4>Subscribing Topics</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>):</li>
+</ul>
+<p>Input pointcloud. This should be <strong>organized</strong> pointcloud.</p>
+
+<h4>Publishing topisc</h4>
+
+<ul>
+<li>
+<code>~output</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>):</li>
+<li>
+<code>~output_polygon</code> (<code>jsk_pcl_ros/PolygonArray</code>):</li>
+<li>
+<code>~output_coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>)</li>
+</ul>
+<p>The inliers, coefficients and convex polygons of the connected polygons.
+* <code>~output_nonconnected</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>):
+* <code>~output_nonconnected_polygon</code> (<code>jsk_pcl_ros/PolygonArray</code>):
+* <code>~output_nonconnected_coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>)</p>
+
+<p>The inliers, coefficients and polygons of the polygons of connected components analysis.
+* <code>~output_refined</code> (<code>jsk_pcl_ros/ClusterPointIndices</code>):
+* <code>~output_refined_polygon</code> (<code>jsk_pcl_ros/PolygonArray</code>):
+* <code>~output_refined_coefficients</code> (<code>jsk_pcl_ros/ModelCoefficientsArray</code>)</p>
+
+<p>The inliers, coefficients and convex polygons of the refined polygons.
+* <code>~output_normal</code> (<code>sensor_msgs/PointCloud2</code>):</p>
+
+<p>The pointcloud of normal of <code>~input</code> pointcloud.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~estimate_normal</code> (Boolean, default: <code>True</code>):</li>
+</ul>
+<p>Estimate normal if it is set to <code>True</code>
+* <code>~publish_normal</code> (Boolean, default: <code>False</code>):</p>
+
+<p>Publish the result of normal to <code>~output_normal</code>
+* <code>~max_depth_change_factor</code> (Double, default: <code>0.02</code>):</p>
+
+<p>The depth change threshold for computing object borders in normal estimation.
+* <code>~normal_smoothing_size</code> (Double, default: <code>20.0</code>):</p>
+
+<p>the size of the area used to smooth normals
+   (depth dependent if <code>~depth_dependent_smoothing</code> is true)
+* <code>~depth_dependent_smoothing</code> (Boolean, default: <code>False</code>)</p>
+
+<p>Smooth normal depending on depth
+* <code>~estimation_method</code> (Integer, default: <code>1</code>)</p>
+
+<p>Estimation method of normal. You can choose one of <code>AVERAGE_3D_GRADIENT(0)</code>, <code>COVARIANCE_MATRIX(1)</code> and <code>AVERAGE_DEPTH_CHANGE(2)</code>.
+* <code>~border_policy_ignore</code> (Boolean, default: <code>True</code>)</p>
+
+<p>Ignore border if this is <code>True</code>
+* <code>~min_size</code> (Integer, default: <code>2000</code>)</p>
+
+<p>Minimum number of the points on a planar region during connected component analysis.
+   We recommend smaller size for this parameter in order to get stable result.
+* <code>~angular_threshold</code> (Double, default: <code>0.05</code>)
+* <code>~distance_threshold</code> (Double, default: <code>0.01</code>)</p>
+
+<p>Distance and angular threshold in connected component analysis.
+* <code>~max_curvature</code> (Double, default: <code>0.001</code>)</p>
+
+<p>The maximum curvature allowed for a planar region
+* <code>~connect_plane_angle_threshold</code> (Double, default: <code>0.2</code>)
+* <code>~connect_distance_threshold</code> (Double, default: <code>0.01</code>)</p>
+
+<p>These parameters affect near plane connection. OrganizedMultiPlaneSegmentation connects
+   planes which have near normal direction and whose boundaries are near enough.
+* <code>~ransac_refine_coefficients</code> (Boolean, default: <code>True</code>)</p>
+
+<p>Conduct RANSAC refinment for each plane if it is true.
+* <code>~ransac_refine_outlier_distance_threshold</code> (Double, default: <code>0.1</code>)</p>
+
+<p>Outlier threshold of RANSAC refinment for each plane.
+* <code>~min_refined_area_threshold</code> (Double, default: <code>0.04</code>)
+* <code>~max_refined_area_threshold</code> (Double, default: <code>10000</code>)</p>
+
+<p>Minimum and maximum area threshold for each convex polygon.</p>
+
+<h3>jsk_pcl/VoxelGridDownsampleManager</h3>
+
+<h3>jsk_pcl/VoxelGridDownsampleDecoder</h3>
+
+<h3>jsk_pcl/Snapit</h3>
+
+<h4>What Is This</h4>
+
+<p>This nodelet will snap the plane to the real world pointcloud.
+Move the interactive marker and the snapped plane will follow the movement.</p>
+
+<h4>Sample</h4>
+
+<p>Plug the depth sensor which can be launched by openni.launch and run the below command.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros snapit_sample.launch
+</code></pre></div>
+<h3>jsk_pcl/KeypointsPublisher</h3>
+
+<h4>What Is This</h4>
+
+<p>This nodelet will calculate the NURF keypoints and publish.</p>
+
+<h4>Sample</h4>
+
+<p>Plug the depth sensor which can be launched by openni.launch and run the below command.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros keypoints_publisher.launch
+</code></pre></div>
+<h3>jsk_pcl/HintedPlaneDetector</h3>
+
+<h4>What Is This</h4>
+
+<p><img src="https://raw.githubusercontent.com//jsk-ros-pkg/jsk_recognition.git/master/jsk_pcl_ros//images/hinted_plane_detector.png" alt="">
+Estimate plane parameter from small 'hint' pointcloud and grow it to detect larger plane.</p>
+
+<p>Algorithm is:</p>
+
+<ol>
+<li>Detect hint plane from small hint pointcloud using RANSAC</li>
+<li>Filter <code>~input</code> pointcloud based on distance and normal direction with hint plane.</li>
+<li>Detect plane from the pointcloud using RANSAC</li>
+<li>Segment clusters out of the inliers of the detected plane based on euclidean metrics</li>
+<li>Extract points from the nearest segmented clusters to the centroid of hint plane</li>
+<li>Compute convex hull of the extracted points</li>
+</ol>
+<h4>Subscribing Topic</h4>
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Input pointcloud. It is required to have normal and xyz fields.</p>
+
+<ul>
+<li>
+<code>~input/hint/cloud</code> (<code>sensor_msgs/PointCloud</code>)</li>
+</ul>
+<p>Hint pointcloud to estimate plane parameter and only xyz fieleds are required.</p>
+
+<h4>Publishing Topic</h4>
+
+<ul>
+<li>
+<code>~output/polygon</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+<li>
+<code>~output/polygon_array</code> (<code>jsk_pcl_ros/PolygonArray</code>)</li>
+<li>
+<code>~output/inliers</code> (<code>pcl_msgs/PointIndices</code>)</li>
+<li>
+<code>~output/coefficients</code> (<code>pcl_msgs/ModelCoefficients</code>)</li>
+</ul>
+<p>Result of detection.</p>
+
+<ul>
+<li>
+<code>~output/hint/polygon</code> (<code>geometry_msgs/PolygonStamped</code>)</li>
+<li>
+<code>~output/hint/polygon_array</code> (<code>jsk_pcl_ros/PolygonArray</code>)</li>
+<li>
+<code>~output/hint/inliers</code> (<code>pcl_msgs/PointIndices</code>)</li>
+<li>
+<code>~output/hint/coefficients</code> (<code>pcl_msgs/ModelCoefficients</code>)</li>
+</ul>
+<p>Result of detection of hint pointcloud.
+* <code>~output/polygon_before_filtering</code> (<code>geometry_msgs/PolygonStamped</code>)
+* <code>~output/polygon_array_before_filtering</code> (<code>jsk_pcl_ros/PolygonArray</code>)</p>
+
+<p>Result of detection before euclidean filtering.
+* <code>~output/candidate_inliers</code> (<code>pcl_msgs/PointIndices</code>)</p>
+
+<p>Candidate point indices filtered by hint plane information.</p>
+
+<h4>Parameters</h4>
+
+<ul>
+<li><code>~hint_outlier_threshold</code></li>
+</ul>
+<p>Outlier threshold to detect hint plane using RANSAC
+* <code>~hint_max_iteration</code></p>
+
+<p>Maximum iteration number to detect hint plane using RANSAC
+* <code>~hint_min_size</code></p>
+
+<p>Minimum number of inliers in hint plane
+* <code>~outlier_threashold</code></p>
+
+<p>Outlier threshold to detect larger plane using RANSAC
+* <code>~max_iteration</code></p>
+
+<p>Maximum iteration number to detect larger plane using RANSAC
+* <code>~min_size</code></p>
+
+<p>Minimum number of inliers in larger plane
+* <code>~eps_angle</code></p>
+
+<p>EPS angle to detect larger plane and normal direction is computed from hint plane.
+* <code>~normal_filter_eps_angle</code></p>
+
+<p>EPS angle to filter candidate points before detecting larger plane.
+  Normal direction is computed from hint plane.
+* <code>~euclidean_clustering_filter_tolerance</code></p>
+
+<p>Tolerance distance in euclidean clustering to filter far points.
+* <code>~euclidean_clustering_filter_min_size</code></p>
+
+<p>Minimum cluster size in euclidean clustering to filter far points.</p>
+
+<h3>jsk_pcl/OctreeChangeDetector</h3>
+
+<h4>What Is This</h4>
+
+<p>This nodelet will publish the difference of sequential pointcloud. You can get the newly generated pointclouds.</p>
+
+<p>Difference with pcl_ros/SegmentDifference refer <a href="https://github.com/jsk-ros-pkg/jsk_recognition/pull/67">https://github.com/jsk-ros-pkg/jsk_recognition/pull/67</a></p>
+
+<h4>Sample</h4>
+
+<p>Plug the depth sensor which can be launched by openni.launch and run the below command.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros octree_change_detector.launch
+</code></pre></div>
+<h4>Speed</h4>
+
+<h3>jsk_pcl/TfTransformCloud</h3>
+
+<h4>What Is This</h4>
+
+<p>This nodelet will republish the pointcloud which is transformed with the designated frame_id.</p>
+
+<h4>Topics</h4>
+
+<ul>
+<li>Input
+
+<ul>
+<li>
+<code>~input</code> (<code>sensor_msgs/PointCloud2</code>): input pointcloud</li>
+</ul>
+</li>
+<li>Output
+
+<ul>
+<li>
+<code>~output</code> (<code>sensor_msgs/PointCloud2</code>): output pointcloud.</li>
+</ul>
+</li>
+</ul>
+<h4>Parameters</h4>
+
+<ul>
+<li>
+<code>~target_frame_id</code> (string): The frame_id to transform pointcloud.</li>
+</ul>
+<h4>Sample</h4>
+
+<p>Plug the depth sensor which can be launched by openni.launch and run the below command.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">roslaunch jsk_pcl_ros tf_transform_cloud.launch
+</code></pre></div>
+<h2>To Test Some Samples</h2>
+
+<p>Please be careful about the nodelet manager name when execute some sample launches.</p>
+
+<p>Because the nodelet manager name is different between groovy version and hydro version in openni.launch,
+you have to replace the nodelet manager name when use in groovy as below.</p>
+
+<p>From</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/camera_nodelet_manager
+</code></pre></div>
+<p>To</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/camera/camera_nodelet_manager
+</code></pre></div>
+</div></body></html>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-list"></span> CHANGELOG</div>
+      <div class="panel-body">
+        
+          <em>No CHANGELOG found.</em>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+
+  <div class="distro distro-fuerte">
+    <div class="container-fluid">
+      
+        
+        
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h3 class="panel-title">Package Summary</h3></div>
+      <div class="panel-body">
+        jsk_pcl_ros
+      </div>
+      <div class="panel-heading"><h3 class="panel-title">Status</h3></div>
+      <div class="panel-body" style="overflow-x: auto">
+        <table class="table table-condensed">
+          <tr>
+            <td class="text-right"><b>Source URI</b></td>
+            <td width="100%"><a class="label label-default" href="https://svn.code.sf.net/p/jsk-ros-pkg/code/trunk">https://svn.code.sf.net/p/jsk-ros-pkg/code/trunk</a></td>
+          </tr>
+          <tr>
+            <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+            <td>
+              
+                <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2014-03-03
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Build Type</b></td>
+            <td>
+              
+                <span class="label label-info">
+              
+              CATKIN</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Released</b></td>
+            <td>
+              
+                <span class="label label-default">UNRELEASED
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Dev Status</b></td>
+            <td>
+              
+                <span class="label label-warning">UNMAINTAINED
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="panel-heading"><h3 class="panel-title">Tags</h3></div>
+      <div class="panel-body">
+        
+        
+          <em>No tags defined.</em>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4 class="panel-title">Details</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          <li><strong>Version:</strong> 0.0.1</li>
+          <li><strong>License:</strong> BSD</li>
+        </ul>
+      </div>
+      <div class="panel-heading"><h4 class="panel-title">Maintainers</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          
+            <li>Youhei Kakiuchi</li>
+          
+        </ul>
+      </div>
+      <div class="panel-heading"><h4 class="panel-title">Authors</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          
+            <li>Yohei Kakiuchi</li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-file"></span> README</div>
+      <div class="panel-body">
+        
+          <em>No README found.</em>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-list"></span> CHANGELOG</div>
+      <div class="panel-body">
+        
+          <em>No CHANGELOG found.</em>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+
+  <div class="distro distro-electric">
+    <div class="container-fluid">
+      
+        
+        
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h3 class="panel-title">Package Summary</h3></div>
+      <div class="panel-body">
+        jsk_pcl_ros
+      </div>
+      <div class="panel-heading"><h3 class="panel-title">Status</h3></div>
+      <div class="panel-body" style="overflow-x: auto">
+        <table class="table table-condensed">
+          <tr>
+            <td class="text-right"><b>Source URI</b></td>
+            <td width="100%"><a class="label label-default" href="https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk">https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk</a></td>
+          </tr>
+          <tr>
+            <td style="white-space: nowrap;" class="text-right"><b>Last Updated</b></div>
+            <td>
+              
+                <span class="label label-default"><span class="glyphicon glyphicon-time"></span> 2014-03-03
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Build Type</b></td>
+            <td>
+              
+                <span class="label label-info">
+              
+              CATKIN</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Released</b></td>
+            <td>
+              
+                <span class="label label-default">UNRELEASED
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><b>Dev Status</b></td>
+            <td>
+              
+                <span class="label label-warning">UNMAINTAINED
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="panel-heading"><h3 class="panel-title">Tags</h3></div>
+      <div class="panel-body">
+        
+        
+          <em>No tags defined.</em>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4 class="panel-title">Details</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          <li><strong>Version:</strong> 0.0.1</li>
+          <li><strong>License:</strong> BSD</li>
+        </ul>
+      </div>
+      <div class="panel-heading"><h4 class="panel-title">Maintainers</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          
+            <li>Youhei Kakiuchi</li>
+          
+        </ul>
+      </div>
+      <div class="panel-heading"><h4 class="panel-title">Authors</h4></div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          
+            <li>Yohei Kakiuchi</li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-file"></span> README</div>
+      <div class="panel-body">
+        
+          <em>No README found.</em>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><span class="glyphicon glyphicon-list"></span> CHANGELOG</div>
+      <div class="panel-body">
+        
+          <em>No CHANGELOG found.</em>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+
+  <div class="distro distro-diamondback">
+    <div class="container-fluid">
+      
+        <div class="alert alert-warning" role="alert">No version for distro <strong>diamondback</strong>. Known supported distros are highlighted in the buttons above.</div>
+      
+    </div>
+  </div>
+
 
 <script src="/js/distro_switch.js"></script>
 
@@ -1146,41 +5904,30 @@ you have to replace the nodelet manager name when use in groovy as below.</p>
     </div>
 
     <footer class="site-footer">
-
   <div class="wrapper">
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>ROS Index</li>
-        </ul>
-      </div>
-
-      <div class="footer-col  footer-col-2">
-        <ul class="social-media-list">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
           
-          <li>
             <a href="https://github.com/rosindex">
-              <span class="icon  icon--github">
-                <svg viewBox="0 0 16 16">
-                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
-                </svg>
-              </span>
+            <span class="icon  icon--github">
+              <svg viewBox="0 0 16 16">
+                <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
 
-              <span class="username">rosindex</span>
-            </a>
-          </li>
-          
-
-        </ul>
-      </div>
-
-      <div class="footer-col  footer-col-3">
-        <p class="text">A community-maintained index of known ROS packages.
-</p>
+            <span class="username">rosindex</span>
+          </a>
+          |
+          <em>generated on 2015-01-20</em>
+        
+        </div>
+        <div class="col-sm-8 col-md-8 text-right">
+          <p class="text">a community-maintained index of robotics software
+ | <a href="/privacy.txt">privacy</a></p>
+        </div>
       </div>
     </div>
-
   </div>
 
 </footer>
